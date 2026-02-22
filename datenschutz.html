@@ -3,689 +3,752 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutzerklärung | DailySunnah App</title>
+    <title>Datenschutzerklärung - DailySunnah App</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        .section-title {
-            position: relative;
-            display: inline-block;
+        body {
+            font-family: 'Inter', sans-serif;
         }
-        .section-title:after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 4px;
-            bottom: -8px;
-            left: 0;
-            background: linear-gradient(90deg, #3B82F6, #10B981);
-            border-radius: 4px;
+        .legal-text {
+            font-family: 'Merriweather', serif;
+            line-height: 1.8;
         }
-        .back-to-top {
-            transition: all 0.3s ease;
+        .smooth-scroll {
+            scroll-behavior: smooth;
         }
-        .back-to-top:hover {
-            transform: translateY(-3px);
+        .nav-active {
+            background-color: rgb(243, 244, 246);
+            border-left: 3px solid rgb(22, 163, 74);
+            color: rgb(22, 101, 52);
+            font-weight: 500;
         }
-        .highlight-box {
-            border-left: 4px solid #3B82F6;
-            transition: all 0.3s ease;
-        }
-        .highlight-box:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        @media (max-width: 1024px) {
+            .nav-active {
+                border-left: none;
+                border-bottom: 3px solid rgb(22, 163, 74);
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-800 smooth-scroll">
+
     <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-500 to-emerald-500 text-white shadow-lg">
-        <div class="container mx-auto px-4 py-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center mb-6 md:mb-0">
-                    <i class="fas fa-mosque text-3xl mr-4"></i>
+    <header class="bg-emerald-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-emerald-700 p-2 rounded-lg">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-emerald-100"></i>
+                    </div>
                     <div>
-                        <h1 class="text-2xl md:text-3xl font-bold">DailySunnah App</h1>
-                        <p class="text-blue-100">Dein täglicher Begleiter für den Islam</p>
+                        <h1 class="text-xl font-bold tracking-tight">DailySunnah</h1>
+                        <p class="text-emerald-200 text-xs uppercase tracking-wider">Datenschutzerklärung</p>
                     </div>
                 </div>
-                <div class="flex space-x-4">
-                    <a href="https://apps.apple.com/app/id6742687466" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-blue-50 transition">
-                        <i class="fas fa-download mr-2"></i>App herunterladen
-                    </a>
-                    <a href="mailto:info@dailysunnah.app" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition">
-                        <i class="fas fa-envelope mr-2"></i>Kontakt
-                    </a>
+                <div class="text-sm text-emerald-200 hidden sm:block">
+                    Stand: 22.02.2026
                 </div>
+                <button id="menuBtn" class="lg:hidden p-2 hover:bg-emerald-800 rounded-lg transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-        <div class="max-w-4xl mx-auto">
-            <!-- Page Title -->
-            <div class="text-center mb-12">
-                <h1 class="text-3xl md:text-4xl font-bold mb-4 section-title">Datenschutzerklärung</h1>
-                <p class="text-gray-600">Stand: 23. April 2025</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+            
+            <!-- Mobile Navigation Menu (hidden by default) -->
+            <div id="mobileNav" class="hidden lg:hidden mb-6 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <nav class="flex overflow-x-auto py-2 px-2 space-x-2 no-scrollbar">
+                    <a href="#verantwortlicher" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Verantwortlicher</a>
+                    <a href="#gegenstand" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Gegenstand</a>
+                    <a href="#grundsaetze" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Grundsätze</a>
+                    <a href="#lokale-speicherung" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Lokale Daten</a>
+                    <a href="#standort" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Standort</a>
+                    <a href="#apis" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Externe APIs</a>
+                    <a href="#push" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Push-Benachrichtigungen</a>
+                    <a href="#bewertung" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Bewertungen</a>
+                    <a href="#werbung" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Werbung</a>
+                    <a href="#drittlaender" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Drittländer</a>
+                    <a href="#kontakt" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Kontakt</a>
+                    <a href="#rechte" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Ihre Rechte</a>
+                </nav>
             </div>
 
-            <!-- Introduction -->
-            <div class="bg-white rounded-xl shadow-md p-6 mb-8 highlight-box">
-                <div class="flex items-start">
-                    <i class="fas fa-shield-alt text-blue-500 text-2xl mr-4 mt-1"></i>
-                    <div>
-                        <p class="text-lg font-medium mb-2">Deine Privatsphäre ist uns wichtig</p>
-                        <p class="text-gray-600">
-                            Wir, die Entwickler der DailySunnah App, legen größten Wert auf den Schutz deiner Privatsphäre. 
-                            Diese Datenschutzerklärung erläutert, welche Daten wir erheben, wie wir sie verwenden und welche Rechte du hast.
-                        </p>
+            <!-- Desktop Sidebar Navigation -->
+            <aside class="hidden lg:block lg:col-span-3">
+                <nav class="sticky top-24 space-y-1 overflow-y-auto max-h-[calc(100vh-8rem)] pr-2">
+                    <a href="#verantwortlicher" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="user-check" class="w-4 h-4"></i>
+                            Verantwortlicher
+                        </span>
+                    </a>
+                    <a href="#gegenstand" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="file-text" class="w-4 h-4"></i>
+                            Gegenstand
+                        </span>
+                    </a>
+                    <a href="#grundsaetze" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="scale" class="w-4 h-4"></i>
+                            Grundsätze
+                        </span>
+                    </a>
+                    <a href="#lokale-speicherung" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="smartphone" class="w-4 h-4"></i>
+                            Lokale Speicherung
+                        </span>
+                    </a>
+                    <a href="#standort" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            Standortdaten
+                        </span>
+                    </a>
+                    <a href="#apis" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="cloud" class="w-4 h-4"></i>
+                            Externe APIs
+                        </span>
+                    </a>
+                    <a href="#push" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="bell" class="w-4 h-4"></i>
+                            Push-Benachrichtigungen
+                        </span>
+                    </a>
+                    <a href="#bewertung" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="star" class="w-4 h-4"></i>
+                            Nutzerbewertung
+                        </span>
+                    </a>
+                    <a href="#werbung" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="megaphone" class="w-4 h-4"></i>
+                            Werbung (AdMob)
+                        </span>
+                    </a>
+                    <a href="#drittlaender" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="globe" class="w-4 h-4"></i>
+                            Drittländer
+                        </span>
+                    </a>
+                    <a href="#kontakt" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            Kontaktaufnahme
+                        </span>
+                    </a>
+                    <a href="#rechte" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="shield" class="w-4 h-4"></i>
+                            Ihre Rechte
+                        </span>
+                    </a>
+                    <a href="#beschwerde" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="alert-circle" class="w-4 h-4"></i>
+                            Beschwerderecht
+                        </span>
+                    </a>
+                    <a href="#sicherheit" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="lock" class="w-4 h-4"></i>
+                            Datensicherheit
+                        </span>
+                    </a>
+                    <a href="#aenderungen" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                            Änderungen
+                        </span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="lg:col-span-9">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                    
+                    <!-- Title Section -->
+                    <div class="bg-emerald-50 border-b border-emerald-100 p-6 sm:p-8">
+                        <h2 class="text-3xl font-bold text-emerald-900 mb-2">Datenschutzerklärung</h2>
+                        <p class="text-emerald-700 font-medium">für die App „DailySunnah"</p>
+                        <div class="mt-4 inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold">
+                            <i data-lucide="calendar" class="w-3 h-3 mr-1"></i>
+                            Stand: 22.02.2026
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Table of Contents -->
-            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
-                <h2 class="text-xl font-bold mb-4 flex items-center">
-                    <i class="fas fa-list-ol text-blue-500 mr-3"></i>Inhaltsübersicht
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    <a href="#section1" class="flex items-center text-blue-600 hover:text-blue-800 transition">
-                        <i class="fas fa-chevron-right text-xs mr-2"></i>1. Verantwortlicher
-                    </a>
-                    <a href="#section2" class="flex items-center text-blue-600 hover:text-blue-800 transition">
-                        <i class="fas fa-chevron-right text-xs mr-2"></i>2. Welche Daten erheben wir?
-                    </a>
-                    <a href="#section3" class="flex items-center text-blue-600 hover:text-blue-800 transition">
-                        <i class="fas fa-chevron-right text-xs mr-2"></i>3. Rechtsgrundlage
-                    </a>
-                    <a href="#section4" class="flex items-center text-blue-600 hover:text-blue-800 transition">
-                        <i class="fas fa-chevron-right text-xs mr-2"></i>4. Weitergabe von Daten
-                    </a>
-                    <a href="#section5" class="flex items-center text-blue-600 hover:text-blue-800 transition">
-                        <i class="fas fa-chevron-right text-xs mr-2"></i>5. Speicherdauer
-                    </a>
-                    <a href="#section6" class="flex items-center text-blue-600 hover:text-blue-800 transition">
-                        <i class="fas fa-chevron-right text-xs mr-2"></i>6. Deine Rechte
-                    </a>
-                    <a href="#section7" class="flex items-center text-blue-600 hover:text-blue-800 transition">
-                        <i class="fas fa-chevron-right text-xs mr-2"></i>7. Widerspruchsrecht
-                    </a>
-                    <a href="#section8" class="flex items-center text-blue-600 hover:text-blue-800 transition">
-                        <i class="fas fa-chevron-right text-xs mr-2"></i>8. Sicherheit
-                    </a>
-                    <a href="#section9" class="flex items-center text-blue-600 hover:text-blue-800 transition">
-                        <i class="fas fa-chevron-right text-xs mr-2"></i>9. Änderungen
-                    </a>
-                    <a href="#section10" class="flex items-center text-blue-600 hover:text-blue-800 transition">
-                        <i class="fas fa-chevron-right text-xs mr-2"></i>10. Kontakt
-                    </a>
-                </div>
-            </div>
+                    <div class="p-6 sm:p-8 space-y-12">
 
-            <!-- Privacy Policy Sections -->
-            <div class="space-y-8">
-                <!-- Section 1 -->
-                <section id="section1" class="bg-white rounded-xl shadow-md p-6">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">1</span>
-                        Verantwortlicher
-                    </h2>
-                    <div class="pl-11">
-                        <p class="mb-4">
-                            Verantwortlich für die Datenverarbeitung ist:
-                        </p>
-                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
-                            <p class="font-medium">Faruk Türkaslan</p>
-                            <p>c/o Postflex #8786</p>
-                            <p>Emsdettener Str. 10</p>
-                            <p>48268 Greven</p>
-                            <p class="mt-2">E-Mail: <a href="mailto:info@dailysunnah.app" class="text-blue-600 hover:underline">info@dailysunnah.app</a></p>
-                        </div>
-                        <p>
-                            Bei Fragen zum Datenschutz erreichst du uns über die oben genannte Kontaktmöglichkeit. 
-                            Da wir keine Daten speichern oder verarbeiten, die eine direkte Identifizierung ermöglichen, 
-                            haben wir keinen Datenschutzbeauftragten ernannt.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- Section 2 -->
-                <section id="section2" class="bg-white rounded-xl shadow-md p-6">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">2</span>
-                        Welche Daten erheben wir und zu welchem Zweck?
-                    </h2>
-                    <div class="pl-11">
-                        <p class="mb-4">
-                            Unsere App ist so konzipiert, dass wir selbst keine personenbezogenen Daten speichern. 
-                            Dennoch nutzen wir einige Dienste, die Daten verarbeiten können.
-                        </p>
-
-                        <!-- Subsection 2.1 -->
-                        <div class="mb-6">
-                            <h3 class="text-xl font-semibold mb-3 flex items-center">
-                                <span class="bg-emerald-100 text-emerald-800 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">2.1</span>
-                                Firebase Realtime Database
-                            </h3>
-                            <div class="pl-8">
-                                <div class="flex items-start mb-3">
-                                    <i class="fas fa-database text-emerald-500 mt-1 mr-3"></i>
-                                    <p>
-                                        Wir verwenden die Firebase Realtime Database (angeboten von Google LLC) für Echtzeit-Updates in der App, 
-                                        z. B. um Inhalte wie den Reminder aktuell zu halten. Dabei werden keine personenbezogenen Daten gespeichert.
-                                    </p>
+                        <!-- Section: Verantwortlicher -->
+                        <section id="verantwortlicher" class="scroll-mt-24">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-emerald-100 rounded-lg">
+                                    <i data-lucide="user-check" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-user-shield text-emerald-500 mt-1 mr-3"></i>
-                                    <p>
-                                        Die Daten, die in der Firebase-Datenbank verarbeitet werden, sind anonym und beziehen sich ausschließlich 
-                                        auf den Inhalt der App. Es wird kein Nutzerprofil erstellt, und wir speichern keine Informationen, 
-                                        die dich identifizieren könnten.
-                                    </p>
+                                <h3 class="text-xl font-bold text-gray-900">Verantwortlicher</h3>
+                            </div>
+                            <div class="legal-text text-gray-700 pl-11">
+                                <p class="mb-4">Verantwortlich für die Verarbeitung personenbezogener Daten im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
+                                <div class="bg-gray-50 rounded-lg p-4 border-l-4 border-emerald-500 my-4">
+                                    <p class="font-semibold text-gray-900">Faruk Türkaslan</p>
+                                    <p class="text-gray-600">c/o Postflex #8786</p>
+                                    <p class="text-gray-600">Emsdettener Str. 10</p>
+                                    <p class="text-gray-600">48268 Greven</p>
+                                    <a href="mailto:info@dailysunnah.app" class="text-emerald-600 hover:text-emerald-800 underline mt-2 inline-block">
+                                        info@dailysunnah.app
+                                    </a>
                                 </div>
                             </div>
-                        </div>
+                        </section>
 
-                        <!-- Subsection 2.2 -->
-                        <div class="mb-6">
-                            <h3 class="text-xl font-semibold mb-3 flex items-center">
-                                <span class="bg-emerald-100 text-emerald-800 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">2.2</span>
-                                Firebase Cloud Messaging (FCM)
-                            </h3>
-                            <div class="pl-8">
-                                <div class="flex items-start mb-3">
-                                    <i class="fas fa-bell text-emerald-500 mt-1 mr-3"></i>
-                                    <p>
-                                        Wir nutzen Firebase Cloud Messaging (ebenfalls von Google LLC), um dir Erinnerungen oder Benachrichtigungen 
-                                        zu senden, sofern du diese Funktion aktivierst. Hierfür wird ein anonymer Geräte-Token erstellt, der mit 
-                                        deinem Gerät verknüpft ist.
-                                    </p>
+                        <!-- Section: Gegenstand -->
+                        <section id="gegenstand" class="scroll-mt-24">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-emerald-100 rounded-lg">
+                                    <i data-lucide="file-text" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-toggle-off text-emerald-500 mt-1 mr-3"></i>
-                                    <p>
-                                        Dieser Token dient ausschließlich dazu, Push-Benachrichtigungen an dein Gerät zu senden. Wir speichern keine 
-                                        personenbezogenen Daten wie deinen Namen, deine E-Mail-Adresse oder andere Identifikationsmerkmale. 
-                                        Du kannst Benachrichtigungen jederzeit in den Einstellungen der App oder deines Geräts deaktivieren.
-                                    </p>
+                                <h3 class="text-xl font-bold text-gray-900">Gegenstand dieser Datenschutzerklärung</h3>
+                            </div>
+                            <div class="legal-text text-gray-700 pl-11">
+                                <p>Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten bei der Nutzung der App „DailySunnah" verarbeitet werden, zu welchen Zwecken dies geschieht, auf welcher Rechtsgrundlage die Verarbeitung beruht und welche Rechte Ihnen zustehen.</p>
+                            </div>
+                        </section>
+
+                        <!-- Section: Grundsätze -->
+                        <section id="grundsaetze" class="scroll-mt-24">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-emerald-100 rounded-lg">
+                                    <i data-lucide="scale" class="w-5 h-5 text-emerald-700"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Grundsätze der Datenverarbeitung</h3>
+                            </div>
+                            <div class="legal-text text-gray-700 pl-11">
+                                <p>Wir verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung der App-Funktionen erforderlich ist oder Sie in eine Verarbeitung eingewilligt haben (z. B. Standort oder Push-Benachrichtigungen). Wir betreiben keine eigenen Server zur Speicherung Ihrer in der App erfassten Planer- oder Quiz-Daten.</p>
+                            </div>
+                        </section>
+
+                        <!-- Section: Lokale Speicherung -->
+                        <section id="lokale-speicherung" class="scroll-mt-24">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-emerald-100 rounded-lg">
+                                    <i data-lucide="smartphone" class="w-5 h-5 text-emerald-700"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Lokale Speicherung auf Ihrem Gerät</h3>
+                            </div>
+                            <div class="legal-text text-gray-700 pl-11">
+                                <p class="mb-4">Die App ermöglicht u. a. das Erfassen und Tracken von Terminen, To-dos, Gebeten, Dhikr, Spenden sowie die Nutzung einer Quiz-Funktion. Diese Daten werden nach aktuellem Funktionsumfang überwiegend lokal auf Ihrem Endgerät gespeichert.</p>
+                                
+                                <div class="space-y-4 mt-4">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Welche Daten:</h4>
+                                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                            <li>Von Ihnen eingegebene Inhalte (z. B. Planer-/Tracking-Einträge, Quiz-Fortschritt)</li>
+                                            <li>App-Einstellungen (z. B. ausgewählte Anzeigeoptionen)</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Zweck:</h4>
+                                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                            <li>Bereitstellung der jeweiligen App-Funktionen</li>
+                                            <li>Speicherung Ihrer Einstellungen und Fortschritte</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                                        <h4 class="font-semibold text-emerald-900 mb-2">Rechtsgrundlage:</h4>
+                                        <p class="text-emerald-800 text-sm">Art. 6 Abs. 1 lit. b DSGVO (Vertrag/vertragsähnliche Nutzung der App-Funktionen) und/oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer funktionsfähigen App)</p>
+                                    </div>
+
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Empfänger:</h4>
+                                        <p class="text-gray-700">Keine Übermittlung dieser lokalen Inhalte an uns</p>
+                                    </div>
+
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Speicherdauer/Löschung:</h4>
+                                        <p class="text-gray-700">Die Daten bleiben auf Ihrem Gerät, bis Sie sie in der App löschen, die App-Daten löschen oder die App deinstallieren.</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
+                                    <p class="text-amber-800 font-medium mb-1">Hinweis zu Geräte-Backups:</p>
+                                    <p class="text-amber-700 text-sm">Je nach Betriebssystem können lokale App-Daten in Sicherungen (z. B. Cloud-Backups des Geräts) enthalten sein. Für diese Sicherungen ist der jeweilige Betriebssystem-/Cloud-Anbieter verantwortlich.</p>
                                 </div>
                             </div>
-                        </div>
+                        </section>
 
-                        <!-- Subsection 2.3 -->
-                        <div class="mb-6">
-                            <h3 class="text-xl font-semibold mb-3 flex items-center">
-                                <span class="bg-emerald-100 text-emerald-800 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">2.3</span>
-                                Aladhan API (Gebetszeiten)
-                            </h3>
-                            <div class="pl-8">
-                                <div class="flex items-start mb-3">
-                                    <i class="fas fa-clock text-emerald-500 mt-1 mr-3"></i>
-                                    <p>
-                                        Die Gebetszeiten in der App beziehen wir von der Aladhan API (aladhan.com). Um dir die passenden Gebetszeiten 
-                                        anzuzeigen, wird dein Standort (z. B. Stadt oder Koordinaten) an die Server von Aladhan übermittelt.
-                                    </p>
+                        <!-- Section: Standortdaten -->
+                        <section id="standort" class="scroll-mt-24">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-emerald-100 rounded-lg">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-map-marker-alt text-emerald-500 mt-1 mr-3"></i>
-                                    <p>
-                                        Diese Standortdaten werden dabei nur für die Abfrage der Gebetszeiten genutzt. Wir selbst speichern diese 
-                                        Daten nicht. Die Standortfreigabe kannst du jederzeit in den Einstellungen deiner App oder deines Geräts 
-                                        deaktivieren.
-                                    </p>
+                                <h3 class="text-xl font-bold text-gray-900">Standortdaten (Gebetszeiten und Qibla)</h3>
+                            </div>
+                            <div class="legal-text text-gray-700 pl-11">
+                                <p class="mb-4">Für die Berechnung der Gebetszeiten sowie die Qibla-Funktion kann die App auf Standortdaten zugreifen, sofern Sie dies über die Geräteberechtigung erlauben.</p>
+                                
+                                <div class="space-y-4 mt-4">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Welche Daten:</h4>
+                                        <p class="text-gray-700">Standortdaten (Koordinaten), ggf. abgeleitete Ortsinformationen</p>
+                                    </div>
+                                    
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Zweck:</h4>
+                                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                            <li>Gebetszeiten anhand Ihres Standorts berechnen</li>
+                                            <li>Qibla-Richtung anzeigen</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Speicherung:</h4>
+                                        <p class="text-gray-700">Standort/Koordinaten können lokal auf Ihrem Gerät gespeichert werden (z. B. zuletzt verwendeter Standort), damit Sie diese nicht erneut eingeben müssen.</p>
+                                    </div>
+
+                                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                                        <h4 class="font-semibold text-emerald-900 mb-2">Rechtsgrundlage:</h4>
+                                        <p class="text-emerald-800 text-sm">Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Die Einwilligung erteilen Sie über die Standortberechtigung Ihres Geräts und können sie jederzeit in den Geräteeinstellungen widerrufen.</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                                    <p class="text-blue-800 font-medium mb-1">Hinweis:</p>
+                                    <p class="text-blue-700 text-sm">Zur Berechnung der Gebetszeiten werden Anfragen an externe Dienste gestellt. Dabei werden technisch bedingt Verbindungsdaten (insbesondere die IP-Adresse) verarbeitet. Wenn Sie Gebetszeiten anhand Ihres Standorts nutzen oder einen Standort eingeben, können Koordinaten an den jeweiligen Dienst übermittelt werden (siehe Abschnitt 6).</p>
                                 </div>
                             </div>
-                        </div>
+                        </section>
 
-                        <!-- Subsection 2.4 -->
-                        <div class="mb-6">
-                            <h3 class="text-xl font-semibold mb-3 flex items-center">
-                                <span class="bg-emerald-100 text-emerald-800 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">2.4</span>
-                                Google Ads (Werbung)
-                            </h3>
-                            <div class="pl-8">
-                                <div class="flex items-start mb-3">
-                                    <i class="fas fa-ad text-emerald-500 mt-1 mr-3"></i>
-                                    <p>
-                                        Wir nutzen Google AdMob (angeboten von Google LLC), um Werbung in der App anzuzeigen. Die Anzeige von Werbung 
-                                        ist freiwillig, und du kannst sie in den Einstellungen der App oder deines Geräts deaktivieren.
-                                    </p>
+                        <!-- Section: Externe APIs -->
+                        <section id="apis" class="scroll-mt-24">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-emerald-100 rounded-lg">
+                                    <i data-lucide="cloud" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-3">
-                                    <p class="font-medium text-yellow-800">Welche Daten können erhoben werden?</p>
-                                    <ul class="list-disc pl-5 mt-2 space-y-1 text-yellow-800">
-                                        <li>Gerätekennungen (z. B. Advertising ID auf Android oder IDFA auf iOS)</li>
-                                        <li>IP-Adresse</li>
-                                        <li>Ungefährer Standort (z. B. Land oder Region)</li>
-                                        <li>Interaktionen mit Anzeigen (z. B. Klicks oder Impressionen)</li>
-                                        <li>Technische Daten (z. B. Gerätetyp, Betriebssystem)</li>
+                                <h3 class="text-xl font-bold text-gray-900">Externe APIs</h3>
+                            </div>
+                            <div class="legal-text text-gray-700 pl-11">
+                                <p class="mb-4">Die App ruft Inhalte und Daten von externen Diensten ab, um Funktionen wie Gebetszeiten, Qur'an-Text, Übersetzungen, Transliteration und Rezitation (Audio) bereitzustellen. Dabei werden technisch bedingt Verbindungsdaten verarbeitet.</p>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                                    <h4 class="font-semibold text-gray-900 mb-3">Eingesetzte Dienste:</h4>
+                                    <ul class="space-y-2 text-sm text-gray-700">
+                                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-emerald-500 rounded-full"></span>aladhan.com (Gebetszeiten)</li>
+                                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-emerald-500 rounded-full"></span>quranEnc.com (Qur'an-Übersetzungen)</li>
+                                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-emerald-500 rounded-full"></span>AlQuran.cloud API (Qur'an-Text und Transliteration)</li>
+                                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-emerald-500 rounded-full"></span>everyayah.com (Rezitation/Audio)</li>
                                     </ul>
                                 </div>
-                                <div class="flex items-start mb-3">
-                                    <i class="fas fa-cookie text-emerald-500 mt-1 mr-3"></i>
-                                    <p>
-                                        Google AdMob kann Cookies oder ähnliche Technologien (z. B. Advertising ID) verwenden, um Anzeigen zu schalten 
-                                        und deren Wirksamkeit zu messen. Diese Daten werden von Google verarbeitet, um relevante Anzeigen bereitzustellen 
-                                        und die Wirksamkeit von Werbekampagnen zu messen.
-                                    </p>
+
+                                <div class="space-y-4">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Welche Daten:</h4>
+                                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                            <li>Verbindungsdaten (insbesondere IP-Adresse, Zeitpunkt der Anfrage, technisch notwendige Verbindungsinformationen)</li>
+                                            <li>Bei Gebetszeiten zusätzlich: Standortdaten/Koordinaten, sofern Sie diese Funktion nutzen</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                                        <h4 class="font-semibold text-emerald-900 mb-2">Rechtsgrundlage:</h4>
+                                        <p class="text-emerald-800 text-sm">Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der App-Funktionen) und/oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer funktionsfähigen App). Soweit Standortdaten übermittelt werden: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</p>
+                                    </div>
+
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Empfänger:</h4>
+                                        <p class="text-gray-700">Die genannten externen Anbieter als Empfänger der jeweiligen Anfrage</p>
+                                    </div>
                                 </div>
-                                <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
-                                    <p class="font-medium text-blue-800">Wie kannst du personalisierte Werbung deaktivieren?</p>
-                                    <div class="mt-2 space-y-2">
-                                        <p class="text-blue-800">
-                                            <span class="font-medium">Auf Android:</span> In den Google-Einstellungen die Option „Personalisierte Anzeigen deaktivieren“ auswählst.
-                                        </p>
-                                        <p class="text-blue-800">
-                                            <span class="font-medium">Auf iOS:</span> In den Einstellungen unter „Datenschutz & Sicherheit“ > „Tracking“ die Option „Apps erlauben, Tracking anzufordern“ deaktivieren und anschließend auf „Apps auffordern, das Tracking zu stoppen“ tippen.
-                                        </p>
+
+                                <div class="mt-4 bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
+                                    <p class="text-amber-800 font-medium mb-1">Hinweis:</p>
+                                    <p class="text-amber-700 text-sm">Auf die Datenverarbeitung durch diese Drittanbieter (z. B. Server-Protokolle/Logs) haben wir keinen vollständigen Einfluss. Es kann nicht ausgeschlossen werden, dass die Anbieter Verbindungsdaten nach eigenen Vorgaben speichern und auswerten.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Section: Push -->
+                        <section id="push" class="scroll-mt-24">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-emerald-100 rounded-lg">
+                                    <i data-lucide="bell" class="w-5 h-5 text-emerald-700"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Push-Benachrichtigungen (Firebase Cloud Messaging)</h3>
+                            </div>
+                            <div class="legal-text text-gray-700 pl-11">
+                                <p class="mb-4">Für Push-Benachrichtigungen verwenden wir Firebase Cloud Messaging (FCM), einen Dienst von Google.</p>
+                                
+                                <div class="space-y-4">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Welche Daten:</h4>
+                                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                            <li>Geräte-/Push-Token (zur Zustellung)</li>
+                                            <li>Technische Verbindungsdaten (z. B. IP-Adresse, Zeitpunkt, Zustell-/Verbindungsinformationen)</li>
+                                            <li>Inhalte der Benachrichtigung, soweit diese zur Zustellung an Ihr Gerät übermittelt werden</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Zweck:</h4>
+                                        <p class="text-gray-700">Zustellung von Push-Benachrichtigungen (sofern von Ihnen aktiviert)</p>
+                                    </div>
+
+                                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                                        <h4 class="font-semibold text-emerald-900 mb-2">Rechtsgrundlage:</h4>
+                                        <p class="text-emerald-800 text-sm">Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Sie können Push-Benachrichtigungen jederzeit in den Geräte-/App-Einstellungen deaktivieren.</p>
+                                    </div>
+
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Empfänger:</h4>
+                                        <p class="text-gray-700">Google (Firebase)</p>
+                                    </div>
+
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Speicherdauer/Löschung:</h4>
+                                        <p class="text-gray-700">Token und Zustellinformationen werden typischerweise solange verarbeitet, wie Push-Benachrichtigungen aktiv sind, und können sich technisch ändern (z. B. Token-Rotation). Durch Deaktivierung von Push oder Deinstallation der App endet die Nutzung regelmäßig.</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </section>
 
-                        <!-- Subsections 2.5-2.8 -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <!-- 2.5 -->
-                            <div class="bg-gray-50 p-4 rounded-lg">
-                                <h4 class="font-semibold mb-2 flex items-center">
-                                    <span class="bg-gray-200 text-gray-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2">2.5</span>
-                                    In-App-Bewertungen
-                                </h4>
-                                <p class="text-sm text-gray-600">
-                                    Wenn du die Funktion „Bewerten" nutzt, leitet die App dich zur nativen Bewertungsaufforderung deines Geräts weiter. 
-                                    Dabei werden keine personenbezogenen Daten von uns erhoben oder gespeichert.
-                                </p>
-                            </div>
-                            
-                            <!-- 2.6 -->
-                            <div class="bg-gray-50 p-4 rounded-lg">
-                                <h4 class="font-semibold mb-2 flex items-center">
-                                    <span class="bg-gray-200 text-gray-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2">2.6</span>
-                                    Instagram-Verlinkung
-                                </h4>
-                                <p class="text-sm text-gray-600">
-                                    Wenn du auf „Folgen" klickst, wirst du zur Instagram-App oder zum App Store/Play Store weitergeleitet. 
-                                    Dabei werden keine Daten von uns erhoben oder gespeichert.
-                                </p>
-                            </div>
-                            
-                            <!-- 2.7 -->
-                            <div class="bg-gray-50 p-4 rounded-lg">
-                                <h4 class="font-semibold mb-2 flex items-center">
-                                    <span class="bg-gray-200 text-gray-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2">2.7</span>
-                                    Teilen-Funktion
-                                </h4>
-                                <p class="text-sm text-gray-600">
-                                    Die Funktion „Teilen" ermöglicht es dir, einen vorgefertigten Text mit einem Link zur App über Plattformen 
-                                    wie WhatsApp oder E-Mail zu teilen. Wir speichern keine Daten im Zusammenhang mit dieser Funktion.
-                                </p>
-                            </div>
-                            
-                            <!-- 2.8 -->
-                            <div class="bg-gray-50 p-4 rounded-lg">
-                                <h4 class="font-semibold mb-2 flex items-center">
-                                    <span class="bg-gray-200 text-gray-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2">2.8</span>
-                                    Quiz & Checkliste
-                                </h4>
-                                <p class="text-sm text-gray-600">
-                                    Die Fortschritte, die du beim Quiz sowie bei der täglichen Checkliste machst, werden ausschließlich lokal 
-                                    auf deinem Gerät gespeichert. Es erfolgt keine Übermittlung dieser Daten an unsere Server.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section 3 -->
-                <section id="section3" class="bg-white rounded-xl shadow-md p-6">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">3</span>
-                        Rechtsgrundlage der Datenverarbeitung
-                    </h2>
-                    <div class="pl-11">
-                        <p class="mb-4">
-                            Die Datenverarbeitung erfolgt auf folgenden Rechtsgrundlagen (gemäß DSGVO, falls anwendbar):
-                        </p>
-                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                            <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
-                                <i class="fas fa-check-circle text-blue-500 mr-2"></i>Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)
-                            </h4>
-                            <p class="text-blue-800">
-                                Wenn du Push-Benachrichtigungen aktivierst, deinen Standort für Gebetszeiten freigibst oder personalisierte Werbung zulässt, 
-                                erfolgt dies auf Basis deiner freiwilligen Einwilligung. Du kannst diese Einwilligung jederzeit widerrufen.
-                            </p>
-                        </div>
-                        <div class="bg-green-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-green-800 mb-2 flex items-center">
-                                <i class="fas fa-balance-scale text-green-500 mr-2"></i>Berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO)
-                            </h4>
-                            <p class="text-green-800">
-                                Die Verwendung von Firebase für Echtzeit-Updates, anonyme Geräte-Token für Push-Benachrichtigungen und personalisierte 
-                                Werbung basiert auf unserem berechtigten Interesse, dir eine funktionale und kostenfreie App bereitzustellen.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section 4 -->
-                <section id="section4" class="bg-white rounded-xl shadow-md p-6">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">4</span>
-                        Weitergabe von Daten
-                    </h2>
-                    <div class="pl-11">
-                        <p class="mb-4">
-                            Wir geben keine personenbezogenen Daten an Dritte weiter, es sei denn, dies ist technisch notwendig für die Bereitstellung der App-Funktionen.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <div class="bg-purple-100 text-purple-800 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-1">
-                                    <i class="fab fa-google"></i>
+                        <!-- Section: Bewertung -->
+                        <section id="bewertung" class="scroll-mt-24">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-emerald-100 rounded-lg">
+                                    <i data-lucide="star" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <div>
-                                    <h4 class="font-semibold">Google LLC (Firebase und AdMob)</h4>
-                                    <p class="text-gray-600">
-                                        Firebase verarbeitet anonyme Geräte-Token (für FCM) und nicht-personenbezogene Inhalte (für die Realtime Database). 
-                                        AdMob verarbeitet Daten wie Gerätekennungen und IP-Adressen für Werbezwecke.
-                                    </p>
-                                    <p class="text-gray-600 mt-1">
-                                        Google hat seinen Sitz in den USA, weshalb Daten in die USA übermittelt werden können. Google ist unter dem 
-                                        EU-US Data Privacy Framework zertifiziert, was einen angemessenen Datenschutz gewährleistet.
-                                    </p>
+                                <h3 class="text-xl font-bold text-gray-900">Nutzerbewertung (Firebase)</h3>
+                            </div>
+                            <div class="legal-text text-gray-700 pl-11">
+                                <p class="mb-4">In der App kann eine Bewertung erfasst werden (z. B. Sternebewertung und ggf. ein Text). Diese Bewertung wird über Firebase gespeichert.</p>
+                                
+                                <div class="space-y-4">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Welche Daten:</h4>
+                                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                            <li>Bewertungsdaten (z. B. Rating, optionaler Text)</li>
+                                            <li>Zeitpunkte/technische Verbindungsdaten, soweit für die Übermittlung erforderlich</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Zweck:</h4>
+                                        <p class="text-gray-700">Einholung und Auswertung von Nutzerfeedback zur Verbesserung der App</p>
+                                    </div>
+
+                                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                                        <h4 class="font-semibold text-emerald-900 mb-2">Rechtsgrundlage:</h4>
+                                        <p class="text-emerald-800 text-sm">Art. 6 Abs. 1 lit. a DSGVO (Einwilligung, wenn Sie aktiv eine Bewertung absenden) und/oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Verbesserung der App)</p>
+                                    </div>
+
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Speicherdauer/Löschung:</h4>
+                                        <p class="text-gray-700">Grundsätzlich bis zur Zweckerreichung oder bis Sie die Löschung verlangen, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex items-start">
-                                <div class="bg-green-100 text-green-800 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-1">
-                                    <i class="fas fa-pray"></i>
+                        </section>
+
+                        <!-- Section: Werbung -->
+                        <section id="werbung" class="scroll-mt-24">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-emerald-100 rounded-lg">
+                                    <i data-lucide="megaphone" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <div>
-                                    <h4 class="font-semibold">Aladhan API</h4>
-                                    <p class="text-gray-600">
-                                        Die App verwendet die öffentliche Gebetszeiten-API von Aladhan. Dabei kann die aktuelle Position sowie deine 
-                                        IP-Adresse technisch bedingt an die Server von Aladhan übermittelt werden. Diese Daten werden von uns nicht gespeichert.
-                                    </p>
+                                <h3 class="text-xl font-bold text-gray-900">Werbung (Google AdMob)</h3>
+                            </div>
+                            <div class="legal-text text-gray-700 pl-11">
+                                <p class="mb-4">Die App nutzt Google AdMob zur Einblendung von Werbung. Dabei können – abhängig von Geräte- und Einwilligungseinstellungen – Daten verarbeitet werden, um Werbung auszuliefern und deren Ausspielung zu messen.</p>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                                    <h4 class="font-semibold text-gray-900 mb-2">Welche Daten (typischerweise, je nach Konfiguration und Einwilligung):</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                        <li>Geräteinformationen (z. B. Modell, Betriebssystem)</li>
+                                        <li>Werbe-Kennungen (z. B. Advertising Identifier/Werbe-ID)</li>
+                                        <li>IP-Adresse und Verbindungsdaten</li>
+                                        <li>Interaktionsdaten (z. B. Anzeige gesehen/geklickt)</li>
+                                        <li>Ggf. ungefähre Standortinformationen (aus technischen Signalen abgeleitet)</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                                    <h4 class="font-semibold text-gray-900 mb-2">Zweck:</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                        <li>Finanzierung der App durch Werbeeinblendungen</li>
+                                        <li>Messung und Optimierung der Auslieferung von Anzeigen</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200 mb-4">
+                                    <h4 class="font-semibold text-emerald-900 mb-2">Rechtsgrundlage:</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-emerald-800 text-sm">
+                                        <li>Soweit erforderlich: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), insbesondere für personalisierte Werbung und zugehörige Messungen</li>
+                                        <li>Soweit ein Zugriff auf Informationen im Endgerät erfolgt (z. B. Werbe-ID, ähnliche Kennungen) und eine Einwilligung erforderlich ist: § 25 TTDSG</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <h4 class="font-semibold text-gray-900 mb-2">Empfänger:</h4>
+                                    <p class="text-gray-700">Google (AdMob) und ggf. weitere an der Werbeauslieferung beteiligte Partner innerhalb des Google-Werbesystems, abhängig von Konfiguration und Einwilligung.</p>
+                                </div>
+
+                                <div class="mt-4 bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
+                                    <p class="text-amber-800 font-medium mb-1">Hinweis:</p>
+                                    <p class="text-amber-700 text-sm">Wenn Sie keine Einwilligung für personalisierte Werbung erteilen, kann nicht-personalisierte/contextuelle Werbung angezeigt werden.</p>
                                 </div>
                             </div>
-                            <div class="flex items-start">
-                                <div class="bg-gray-100 text-gray-800 rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-1">
-                                    <i class="fas fa-store"></i>
+                        </section>
+
+                        <!-- Section: Drittländer -->
+                        <section id="drittlaender" class="scroll-mt-24">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-emerald-100 rounded-lg">
+                                    <i data-lucide="globe" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <div>
-                                    <h4 class="font-semibold">Apple/Google (App Store/Play Store)</h4>
-                                    <p class="text-gray-600">
-                                        Bei Bewertungen oder Store-Weiterleitungen erfolgt die Datenverarbeitung durch Apple oder Google gemäß deren 
-                                        Datenschutzrichtlinien.
-                                    </p>
+                                <h3 class="text-xl font-bold text-gray-900">Datenübermittlungen in Drittländer</h3>
+                            </div>
+                            <div class="legal-text text-gray-700 pl-11">
+                                <p>Bei der Nutzung von Google-Diensten (Firebase, AdMob) kann eine Verarbeitung von Daten in Staaten außerhalb der EU/des EWR (insbesondere USA) nicht ausgeschlossen werden. Solche Übermittlungen können auf geeignete Garantien (z. B. Standardvertragsklauseln) oder – sofern anwendbar – auf Angemessenheitsbeschlüsse gestützt werden.</p>
+                            </div>
+                        </section>
+
+                        <!-- Section: Kontakt -->
+                        <section id="kontakt" class="scroll-mt-24">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-emerald-100 rounded-lg">
+                                    <i data-lucide="mail" class="w-5 h-5 text-emerald-700"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Kontaktaufnahme</h3>
+                            </div>
+                            <div class="legal-text text-gray-700 pl-11">
+                                <p class="mb-4">Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir die von Ihnen übermittelten Daten (E-Mail-Adresse, Inhalt der Nachricht, ggf. weitere bereitgestellte Informationen).</p>
+                                
+                                <div class="space-y-4">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Zweck:</h4>
+                                        <p class="text-gray-700">Bearbeitung Ihrer Anfrage und Kommunikation</p>
+                                    </div>
+
+                                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                                        <h4 class="font-semibold text-emerald-900 mb-2">Rechtsgrundlage:</h4>
+                                        <p class="text-emerald-800 text-sm">Art. 6 Abs. 1 lit. b DSGVO (bei Anfragen im Zusammenhang mit der Nutzung der App) und/oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen)</p>
+                                    </div>
+
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">Speicherdauer:</h4>
+                                        <p class="text-gray-700">Solange erforderlich zur Bearbeitung der Anfrage sowie ggf. im Rahmen gesetzlicher Aufbewahrungspflichten.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
+                        </section>
 
-                <!-- Section 5 -->
-                <section id="section5" class="bg-white rounded-xl shadow-md p-6">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">5</span>
-                        Speicherdauer
-                    </h2>
-                    <div class="pl-11">
-                        <div class="flex items-start mb-3">
-                            <i class="fas fa-database text-blue-500 mt-1 mr-3"></i>
-                            <p>
-                                Wir speichern keine personenbezogenen Daten auf unseren Servern. Die von Firebase verarbeiteten Daten 
-                                (z. B. Geräte-Token) werden nur so lange gespeichert, wie es für die Bereitstellung der Push-Benachrichtigungen 
-                                erforderlich ist. Wenn du Benachrichtigungen deaktivierst, wird der Geräte-Token gelöscht.
-                            </p>
-                        </div>
-                        <div class="flex items-start mb-3">
-                            <i class="fas fa-map-marker-alt text-blue-500 mt-1 mr-3"></i>
-                            <p>
-                                Standortdaten für Gebetszeiten werden lokal auf deinem Gerät gespeichert und bei Deinstallation der App gelöscht.
-                            </p>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-ad text-blue-500 mt-1 mr-3"></i>
-                            <p>
-                                Daten, die von Google AdMob für Werbezwecke erhoben werden, unterliegen den Speicherfristen von Google, 
-                                wie in deren Datenschutzerklärung beschrieben.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section 6 -->
-                <section id="section6" class="bg-white rounded-xl shadow-md p-6">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">6</span>
-                        Deine Rechte
-                    </h2>
-                    <div class="pl-11">
-                        <p class="mb-4">
-                            Du hast folgende Rechte in Bezug auf deine Daten:
-                        </p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                            <div class="bg-blue-50 p-4 rounded-lg">
-                                <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
-                                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>Auskunft
-                                </h4>
-                                <p class="text-blue-800">
-                                    Du kannst Auskunft darüber verlangen, welche Daten wir über dich verarbeiten.
-                                </p>
+                        <!-- Section: Rechte -->
+                        <section id="rechte" class="scroll-mt-24">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-emerald-100 rounded-lg">
+                                    <i data-lucide="shield" class="w-5 h-5 text-emerald-700"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Ihre Rechte</h3>
                             </div>
-                            <div class="bg-blue-50 p-4 rounded-lg">
-                                <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
-                                    <i class="fas fa-edit text-blue-500 mr-2"></i>Berichtigung und Löschung
-                                </h4>
-                                <p class="text-blue-800">
-                                    Du kannst die Berichtigung oder Löschung deiner Daten verlangen.
-                                </p>
-                            </div>
-                            <div class="bg-blue-50 p-4 rounded-lg">
-                                <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
-                                    <i class="fas fa-pause-circle text-blue-500 mr-2"></i>Einschränkung der Verarbeitung
-                                </h4>
-                                <p class="text-blue-800">
-                                    Du kannst die Einschränkung der Verarbeitung deiner Daten verlangen.
-                                </p>
-                            </div>
-                            <div class="bg-blue-50 p-4 rounded-lg">
-                                <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
-                                    <i class="fas fa-ban text-blue-500 mr-2"></i>Widerspruch
-                                </h4>
-                                <p class="text-blue-800">
-                                    Du kannst der Verarbeitung deiner Daten widersprechen.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                            <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
-                                <i class="fas fa-exchange-alt text-blue-500 mr-2"></i>Datenübertragbarkeit
-                            </h4>
-                            <p class="text-blue-800">
-                                Du kannst verlangen, dass wir dir deine Daten in einem strukturierten, gängigen Format zur Verfügung stellen.
-                            </p>
-                        </div>
-                        <p class="mb-4">
-                            Da wir selbst keine personenbezogenen Daten speichern, sind diese Rechte in den meisten Fällen auf die Daten anwendbar, 
-                            die von Drittanbietern (z. B. Google) verarbeitet werden. Bei Fragen oder Anliegen kontaktiere uns über die oben genannte 
-                            Kontaktmöglichkeit. Für Anfragen zu Google Ads-Daten wende dich direkt an Google.
-                        </p>
-                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
-                            <h4 class="font-semibold text-yellow-800 mb-2 flex items-center">
-                                <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>Beschwerderecht
-                            </h4>
-                            <p class="text-yellow-800">
-                                Du hast das Recht, dich bei einer Datenschutzbehörde zu beschweren, z. B. der zuständigen Landesbeauftragten für 
-                                Datenschutz und Informationsfreiheit, wenn du der Meinung bist, dass die Verarbeitung deiner Daten gegen die DSGVO verstößt.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                            <div class="legal-text text-gray-700 pl-11">
+                                <p class="mb-4">Sie haben gegenüber uns folgende Rechte bezüglich Ihrer personenbezogenen Daten (je nach Voraussetzungen der DSGVO):</p>
+                                
+                                <div class="grid sm:grid-cols-2 gap-3">
+                                    <div class="bg-gray-50 rounded-lg p-3 flex items-start gap-2">
+                                        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+                                        <div>
+                                            <span class="font-semibold text-gray-900">Auskunft</span>
+                                            <span class="text-sm text-gray-600 block">Art. 15 DSGVO</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-3 flex items-start gap-2">
+                                        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+                                        <div>
+                                            <span class="font-semibold text-gray-900">Berichtigung</span>
+                                            <span class="text-sm text-gray-600 block">Art. 16 DSGVO</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-3 flex items-start gap-2">
+                                        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+                                        <div>
+                                            <span class="font-semibold text-gray-900">Löschung</span>
+                                            <span class="text-sm text-gray-600 block">Art. 17 DSGVO</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-3 flex items-start gap-2">
+                                        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+                                        <div>
+                                            <span class="font-semibold text-gray-900">Einschränkung der Verarbeitung</span>
+                                            <span class="text-sm text-gray-600 block">Art. 18 DSGVO</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-3 flex items-start gap-2">
+                                        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+                                        <div>
+                                            <span class="font-semibold text-gray-900">Datenübertragbarkeit</span>
+                                            <span class="text-sm text-gray-600 block">Art. 20 DSGVO (soweit anwendbar)</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-3 flex items-start gap-2">
+                                        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0"></i>
+                                        <div>
+                                            <span class="font-semibold text-gray-900">Widerspruch</span>
+                                            <span class="text-sm text-gray-600 block">Art. 21 DSGVO (Art. 6 Abs. 1 lit. f)</span>
+                                        </div>
+                                    </div>
+                                </div>
 
-                <!-- Section 7 -->
-                <section id="section7" class="bg-white rounded-xl shadow-md p-6">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">7</span>
-                        Widerspruchsrecht
-                    </h2>
-                    <div class="pl-11">
-                        <div class="flex items-start">
-                            <i class="fas fa-gavel text-blue-500 mt-1 mr-3"></i>
-                            <p>
-                                Gemäß Art. 21 DSGVO hast du das Recht, aus Gründen, die sich aus deiner besonderen Situation ergeben, 
-                                jederzeit Widerspruch gegen die Verarbeitung deiner personenbezogenen Daten einzulegen, die auf berechtigten 
-                                Interessen basiert. Wende dich hierfür an uns über die angegebene Kontaktmöglichkeit.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                                <div class="mt-4 bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                                    <p class="text-emerald-800 font-medium mb-1">Widerruf von Einwilligungen:</p>
+                                    <p class="text-emerald-700 text-sm">Jederzeit mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</p>
+                                </div>
 
-                <!-- Section 8 -->
-                <section id="section8" class="bg-white rounded-xl shadow-md p-6">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">8</span>
-                        Sicherheit
-                    </h2>
-                    <div class="pl-11">
-                        <div class="flex items-start">
-                            <i class="fas fa-lock text-blue-500 mt-1 mr-3"></i>
-                            <p>
-                                Wir setzen technische und organisatorische Maßnahmen ein, um die Sicherheit der App zu gewährleisten. 
-                                Die Kommunikation mit Firebase, der Aladhan API und Google AdMob erfolgt über verschlüsselte Verbindungen. 
-                                Dennoch liegt die Sicherheit deines Geräts (z. B. Schutz vor Malware) in deiner Verantwortung.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section 9 -->
-                <section id="section9" class="bg-white rounded-xl shadow-md p-6">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">9</span>
-                        Änderungen dieser Datenschutzerklärung
-                    </h2>
-                    <div class="pl-11">
-                        <div class="flex items-start">
-                            <i class="fas fa-sync-alt text-blue-500 mt-1 mr-3"></i>
-                            <p>
-                                Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, z. B. bei neuen Funktionen oder rechtlichen 
-                                Änderungen. Die aktuelle Version findest du stets auf unserer Webseite.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section 10 -->
-                <section id="section10" class="bg-white rounded-xl shadow-md p-6">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">10</span>
-                        Kontakt
-                    </h2>
-                    <div class="pl-11">
-                        <p class="mb-4">
-                            Bei Fragen, Anregungen oder Beschwerden zum Datenschutz erreichst du uns über:
-                        </p>
-                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                            <div class="flex items-center mb-2">
-                                <i class="fas fa-envelope text-blue-500 mr-3"></i>
-                                <a href="mailto:info@dailysunnah.app" class="text-blue-600 hover:underline">info@dailysunnah.app</a>
+                                <div class="mt-4 bg-emerald-600 text-white rounded-lg p-4">
+                                    <p class="font-semibold mb-1">Zur Ausübung Ihrer Rechte:</p>
+                                    <a href="mailto:info@dailysunnah.app" class="text-emerald-100 hover:text-white underline text-lg">info@dailysunnah.app</a>
+                                </div>
                             </div>
-                            <div class="flex items-center">
-                                <i class="fab fa-instagram text-blue-500 mr-3"></i>
-                                <a href="https://instagram.com/dailysunnah.app" target="_blank" class="text-blue-600 hover:underline">@dailysunnah.app</a>
+                        </section>
+
+                        <!-- Section: Beschwerde -->
+                        <section id="beschwerde" class="scroll-mt-24">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-emerald-100 rounded-lg">
+                                    <i data-lucide="alert-circle" class="w-5 h-5 text-emerald-700"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Beschwerderecht bei einer Aufsichtsbehörde</h3>
+                            </div>
+                            <div class="legal-text text-gray-700 pl-11">
+                                <p>Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren. In der Regel können Sie sich an die Aufsichtsbehörde Ihres üblichen Aufenthaltsortes oder des Sitzes des Verantwortlichen wenden.</p>
+                            </div>
+                        </section>
+
+                        <!-- Section: Datensicherheit -->
+                        <section id="sicherheit" class="scroll-mt-24">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-emerald-100 rounded-lg">
+                                    <i data-lucide="lock" class="w-5 h-5 text-emerald-700"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Datensicherheit</h3>
+                            </div>
+                            <div class="legal-text text-gray-700 pl-11">
+                                <p>Wir setzen angemessene technische und organisatorische Maßnahmen ein, um Daten zu schützen. Die Kommunikation mit externen Diensten erfolgt üblicherweise verschlüsselt (HTTPS), soweit vom jeweiligen Dienst unterstützt.</p>
+                            </div>
+                        </section>
+
+                        <!-- Section: Änderungen -->
+                        <section id="aenderungen" class="scroll-mt-24">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-emerald-100 rounded-lg">
+                                    <i data-lucide="refresh-cw" class="w-5 h-5 text-emerald-700"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Änderungen dieser Datenschutzerklärung</h3>
+                            </div>
+                            <div class="legal-text text-gray-700 pl-11">
+                                <p>Wir können diese Datenschutzerklärung anpassen, wenn sich Funktionen, eingesetzte Dienste oder rechtliche Anforderungen ändern. Es gilt die jeweils aktuelle Fassung innerhalb der App bzw. an der Stelle, an der diese Datenschutzerklärung bereitgestellt wird.</p>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="bg-gray-50 border-t border-gray-200 p-6 sm:p-8">
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div class="text-sm text-gray-500 text-center sm:text-left">
+                                <p>&copy; 2026 DailySunnah. Alle Rechte vorbehalten.</p>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+                                <span>DSGVO-konforme Datenverarbeitung</span>
                             </div>
                         </div>
-                        <div class="bg-green-50 p-4 rounded-lg">
-                            <p class="text-green-800 font-medium flex items-center">
-                                <i class="fas fa-heart text-green-500 mr-3"></i>
-                                Vielen Dank, dass du unsere App nutzt!
-                            </p>
-                            <p class="text-green-800 mt-2">
-                                Wir sind bestrebt, dir eine sichere und vertrauensvolle Erfahrung zu bieten.
-                            </p>
-                        </div>
                     </div>
-                </section>
-            </div>
-        </div>
-    </main>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-500 text-white p-3 rounded-full shadow-lg back-to-top opacity-0 invisible transition-all duration-300">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <div class="flex items-center">
-                        <i class="fas fa-mosque text-2xl mr-3"></i>
-                        <span class="text-xl font-bold">DailySunnah App</span>
-                    </div>
-                    <p class="text-gray-400 mt-2">Dein täglicher Begleiter für den Islam</p>
                 </div>
-                <div class="flex space-x-6">
-                    <a href="https://www.instagram.com/dailysunnah.app/" class="text-gray-300 hover:text-white transition">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                    <a href="mailto:info@dailysunnah.app" class="text-gray-300 hover:text-white transition">
-                        <i class="fas fa-envelope text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-300 hover:text-white transition">
-                        <i class="fab fa-google-play text-xl"></i>
-                    </a>
-                    <a href="https://apps.apple.com/de/app/dailysunnah/id6742687466?l=en-GB" class="text-gray-300 hover:text-white transition">
-                        <i class="fab fa-apple text-xl"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
-                <p>&copy; 2025 DailySunnah. Alle Rechte vorbehalten.</p>
-        
-            </div>
+            </main>
         </div>
-    </footer>
+    </div>
 
     <script>
-        // Back to Top Button
-        const backToTopButton = document.getElementById('backToTop');
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileNav = document.getElementById('mobileNav');
         
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopButton.classList.remove('opacity-100', 'visible');
-                backToTopButton.classList.add('opacity-0', 'invisible');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        menuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('hidden');
         });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 20,
-                        behavior: 'smooth'
+        // Active navigation highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-item');
+        const navItemsMobile = document.querySelectorAll('.nav-item-mobile');
+
+        function updateActiveNav() {
+            const scrollY = window.scrollY;
+            
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    // Desktop
+                    navItems.forEach(item => {
+                        item.classList.remove('nav-active');
+                        if (item.getAttribute('href') === `#${sectionId}`) {
+                            item.classList.add('nav-active');
+                        }
+                    });
+                    
+                    // Mobile
+                    navItemsMobile.forEach(item => {
+                        item.classList.remove('bg-emerald-50', 'text-emerald-700', 'font-semibold');
+                        if (item.getAttribute('href') === `#${sectionId}`) {
+                            item.classList.add('bg-emerald-50', 'text-emerald-700', 'font-semibold');
+                        }
                     });
                 }
             });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileNav.classList.add('hidden');
+                }
+            });
         });
+
+        // Initial call
+        updateActiveNav();
     </script>
 </body>
 </html>
