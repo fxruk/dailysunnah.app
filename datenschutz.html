@@ -1004,7 +1004,7 @@
         </div>
     </div>
 
-    <script>
+ <script>
         // Initialize Lucide icons
         lucide.createIcons();
 
@@ -1041,6 +1041,17 @@
 
         btnDe.addEventListener('click', () => setLanguage('de'));
         btnEn.addEventListener('click', () => setLanguage('en'));
+
+        // NEU: Automatische Spracherkennung beim Laden der Seite
+        document.addEventListener('DOMContentLoaded', () => {
+            // Holt die Sprache des Browsers/Geräts (z.B. "de-DE", "en-US", "tr-TR")
+            const userLang = navigator.language || navigator.userLanguage; 
+            
+            // Wenn die Sprache NICHT mit "de" anfängt, schalte auf Englisch um
+            if (!userLang.toLowerCase().startsWith('de')) {
+                setLanguage('en');
+            }
+        });
 
 
         // Mobile menu toggle
