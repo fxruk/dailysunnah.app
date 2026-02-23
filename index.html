@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DailySunnah - Dein digitaler Begleiter für den Islam</title>
+    <title data-i18n="page.title">DailySunnah - Dein digitaler Begleiter für den Islam</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -14,14 +13,20 @@
             background-clip: text;
             color: transparent;
         }
-
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
+        .lang-btn.active {
+            background-color: #047857;
+            color: white;
+        }
+        .lang-btn:not(.active):hover {
+            color: #047857;
+            background-color: #f3f4f6;
+        }
     </style>
 </head>
-
 <body class="bg-gray-50 font-sans">
     <header class="bg-white shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -29,18 +34,24 @@
                 <i class="fas fa-mosque text-green-700 text-3xl mr-3"></i>
                 <h1 class="text-3xl font-bold text-green-700">DailySunnah</h1>
             </div>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#features" class="text-gray-700 hover:text-green-700">Funktionen</a>
-                <a href="#why" class="text-gray-700 hover:text-green-700">Warum DailySunnah?</a>
-                <a href="#download" class="text-gray-700 hover:text-green-700">Download</a>
-            </nav>
+            <div class="flex items-center space-x-4">
+                <nav class="hidden md:flex space-x-8 mr-4 shrink-0">
+                    <a href="#features" class="text-gray-700 hover:text-green-700 whitespace-nowrap" data-i18n="nav.features">Funktionen</a>
+                    <a href="#why" class="text-gray-700 hover:text-green-700 whitespace-nowrap" data-i18n="nav.why">Warum DailySunnah?</a>
+                    <a href="#download" class="text-gray-700 hover:text-green-700 whitespace-nowrap" data-i18n="nav.download">Download</a>
+                </nav>
+                <div class="flex items-center space-x-1 bg-gray-100 rounded-lg p-1 shrink-0">
+                    <button onclick="setLanguage('de')" class="lang-btn px-3 py-1 rounded-md text-sm font-medium transition-all duration-200 text-gray-700" data-lang="de">DE</button>
+                    <button onclick="setLanguage('en')" class="lang-btn px-3 py-1 rounded-md text-sm font-medium transition-all duration-200 text-gray-700" data-lang="en">EN</button>
+                </div>
+            </div>
         </div>
     </header>
 
     <section class="container mx-auto px-6 py-16 md:py-24">
         <div class="max-w-3xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Dein digitaler Begleiter für den Islam</h1>
-            <p class="text-lg text-gray-600 mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6" data-i18n="hero.title">Dein digitaler Begleiter für den Islam</h1>
+            <p class="text-lg text-gray-600 mb-8" data-i18n="hero.desc">
                 Diese App dient zur freiheitlichen Nutzung aller digitalen Lern- und Hilfsmittel rund um den Islam -
                 ohne kostenpflichtige Abonnements. Damit möchten wir unserer Ummah eine angenehme und
                 benutzerfreundliche App zur Verfügung stellen, die uns allen im Alltag unterstützt und unser Wissen über
@@ -49,13 +60,13 @@
             <div class="flex justify-center space-x-4">
                 <a href="https://apps.apple.com/de/app/dailysunnah/id6742687466?l=en-GB" target="_blank"
                     rel="noopener noreferrer"
-                    class="bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-lg flex items-center">
-                    <i class="fab fa-apple mr-2"></i> App Store
+                    class="bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-lg flex items-center transition-colors">
+                    <i class="fab fa-apple mr-2"></i> <span data-i18n="download.appstore">App Store</span>
                 </a>
                 <a href="https://play.google.com/store/apps/details?id=com.faruk.dailysunnah" target="_blank"
                     rel="noopener noreferrer"
-                    class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg flex items-center">
-                    <i class="fab fa-google-play mr-2"></i> Play Store
+                    class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg flex items-center transition-colors">
+                    <i class="fab fa-google-play mr-2"></i> <span data-i18n="download.playstore">Play Store</span>
                 </a>
             </div>
         </div>
@@ -63,49 +74,49 @@
 
     <section id="features" class="bg-white py-16">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Funktionen im Überblick</h2>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16" data-i18n="features.title">Funktionen im Überblick</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
                     <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-clock text-green-700 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Präzise Gebetszeiten</h3>
-                    <p class="text-gray-600">Pünktlich beten, angepasst an deinen Standort.</p>
+                    <h3 class="text-xl font-semibold mb-3" data-i18n="features.prayer.title">Präzise Gebetszeiten</h3>
+                    <p class="text-gray-600" data-i18n="features.prayer.desc">Pünktlich beten, angepasst an deinen Standort.</p>
                 </div>
                 <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
                     <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-compass text-green-700 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Qibla-Finder</h3>
-                    <p class="text-gray-600">Die Richtung zur Kaaba in Sekundenschnelle finden.</p>
+                    <h3 class="text-xl font-semibold mb-3" data-i18n="features.qibla.title">Qibla-Finder</h3>
+                    <p class="text-gray-600" data-i18n="features.qibla.desc">Die Richtung zur Kaaba in Sekundenschnelle finden.</p>
                 </div>
                 <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
                     <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-question-circle text-green-700 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Lehrreiche Quizze</h3>
-                    <p class="text-gray-600">Dein Wissen über den Islam spielerisch vertiefen.</p>
+                    <h3 class="text-xl font-semibold mb-3" data-i18n="features.quiz.title">Lehrreiche Quizze</h3>
+                    <p class="text-gray-600" data-i18n="features.quiz.desc">Dein Wissen über den Islam spielerisch vertiefen.</p>
                 </div>
                 <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
                     <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-bell text-green-700 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Regelmäßige Erinnerungen</h3>
-                    <p class="text-gray-600">Inspiration mit Koran-Versen, Hadithen und mehr.</p>
+                    <h3 class="text-xl font-semibold mb-3" data-i18n="features.reminders.title">Regelmäßige Erinnerungen</h3>
+                    <p class="text-gray-600" data-i18n="features.reminders.desc">Inspiration mit Koran-Versen, Hadithen und mehr.</p>
                 </div>
                 <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
                     <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-paint-brush text-green-700 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Intuitives Design</h3>
-                    <p class="text-gray-600">Optimiert für ein einfaches und angenehmes Erlebnis.</p>
+                    <h3 class="text-xl font-semibold mb-3" data-i18n="features.design.title">Intuitives Design</h3>
+                    <p class="text-gray-600" data-i18n="features.design.desc">Optimiert für ein einfaches und angenehmes Erlebnis.</p>
                 </div>
                 <div class="feature-card bg-white p-8 rounded-xl shadow-md transition-all duration-300">
                     <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-chart-line text-green-700 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Tracker</h3>
-                    <p class="text-gray-600">Verfolge deine Gebete, Dhikr und Fastentage mit Statistiken.</p>
+                    <h3 class="text-xl font-semibold mb-3" data-i18n="features.tracker.title">Tracker</h3>
+                    <p class="text-gray-600" data-i18n="features.tracker.desc">Verfolge deine Gebete, Dhikr und Fastentage mit Statistiken.</p>
                 </div>
             </div>
         </div>
@@ -113,7 +124,7 @@
 
     <section id="why" class="py-16 bg-gray-100">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Warum DailySunnah?</h2>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16" data-i18n="why.title">Warum DailySunnah?</h2>
             <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white p-8 rounded-xl shadow-md">
                     <div class="flex items-start mb-4">
@@ -121,8 +132,8 @@
                             <i class="fas fa-dollar-sign text-green-700"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold">Kostenlos</h3>
-                            <p class="text-gray-600 mt-1">Alle Funktionen ohne versteckte Kosten.</p>
+                            <h3 class="text-xl font-semibold" data-i18n="why.free.title">Kostenlos</h3>
+                            <p class="text-gray-600 mt-1" data-i18n="why.free.desc">Alle Funktionen ohne versteckte Kosten.</p>
                         </div>
                     </div>
                 </div>
@@ -132,8 +143,8 @@
                             <i class="fas fa-check-circle text-green-700"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold">Authentisch</h3>
-                            <p class="text-gray-600 mt-1">Sorgfältig geprüfte Inhalte.</p>
+                            <h3 class="text-xl font-semibold" data-i18n="why.authentic.title">Authentisch</h3>
+                            <p class="text-gray-600 mt-1" data-i18n="why.authentic.desc">Sorgfältig geprüfte Inhalte.</p>
                         </div>
                     </div>
                 </div>
@@ -143,8 +154,8 @@
                             <i class="fas fa-lock text-green-700"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold">Datenschutz</h3>
-                            <p class="text-gray-600 mt-1">Deine Privatsphäre ist uns wichtig – die meisten Daten werden lokal auf deinem Gerät gespeichert.</p>
+                            <h3 class="text-xl font-semibold" data-i18n="why.privacy.title">Datenschutz</h3>
+                            <p class="text-gray-600 mt-1" data-i18n="why.privacy.desc">Deine Privatsphäre ist uns wichtig – die meisten Daten werden lokal auf deinem Gerät gespeichert.</p>
                         </div>
                     </div>
                 </div>
@@ -154,8 +165,8 @@
                             <i class="fas fa-users text-green-700"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold">Für die Ummah</h3>
-                            <p class="text-gray-600 mt-1">Gemeinsam wachsen und das Wissen über den Islam fördern.</p>
+                            <h3 class="text-xl font-semibold" data-i18n="why.ummah.title">Für die Ummah</h3>
+                            <p class="text-gray-600 mt-1" data-i18n="why.ummah.desc">Gemeinsam wachsen und das Wissen über den Islam fördern.</p>
                         </div>
                     </div>
                 </div>
@@ -165,8 +176,8 @@
 
     <section id="download" class="py-16 bg-green-700 text-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-6">Lade DailySunnah jetzt herunter</h2>
-            <p class="text-xl mb-10 max-w-2xl mx-auto">Beginne deine Reise mit einer App, die deinen Glauben stärkt und
+            <h2 class="text-3xl font-bold mb-6" data-i18n="download.title">Lade DailySunnah jetzt herunter</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto" data-i18n="download.desc">Beginne deine Reise mit einer App, die deinen Glauben stärkt und
                 dein Wissen erweitert.</p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <a href="https://apps.apple.com/de/app/dailysunnah/id6742687466?l=en-GB" target="_blank"
@@ -174,18 +185,17 @@
                     class="bg-white text-green-700 hover:bg-gray-100 px-8 py-4 rounded-lg flex items-center justify-center sm:justify-start transition-colors">
                     <i class="fab fa-apple text-2xl mr-3"></i>
                     <div class="text-left">
-                        <div class="text-xs">Download im</div>
-                        <div class="font-bold">App Store</div>
+                        <div class="text-xs" data-i18n="download.pre">Download im</div>
+                        <div class="font-bold" data-i18n="download.appstore2">App Store</div>
                     </div>
                 </a>
-
                 <a href="https://play.google.com/store/apps/details?id=com.faruk.dailysunnah" target="_blank"
                     rel="noopener noreferrer"
                     class="bg-gray-800 text-white hover:bg-gray-900 px-8 py-4 rounded-lg flex items-center justify-center sm:justify-start transition-colors">
                     <i class="fab fa-google-play text-2xl mr-3"></i>
                     <div class="text-left">
-                        <div class="text-xs">Download im</div>
-                        <div class="font-bold">Play Store</div>
+                        <div class="text-xs" data-i18n="download.pre">Download im</div>
+                        <div class="font-bold" data-i18n="download.playstore2">Play Store</div>
                     </div>
                 </a>
             </div>
@@ -199,10 +209,10 @@
                     <h3 class="text-xl font-bold mb-4 flex items-center">
                         <i class="fas fa-mosque mr-2"></i> DailySunnah
                     </h3>
-                    <p class="text-gray-400">Dein digitaler Begleiter für den Islam.</p>
+                    <p class="text-gray-400" data-i18n="footer.tagline">Dein digitaler Begleiter für den Islam.</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Impressum</h4>
+                    <h4 class="font-semibold mb-4" data-i18n="footer.imprint.title">Impressum</h4>
                     <ul class="space-y-2">
                         <li>
                             <span class="block text-gray-400">Faruk Türkaslan</span>
@@ -218,18 +228,154 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Rechtliches</h4>
+                    <h4 class="font-semibold mb-4" data-i18n="footer.legal.title">Rechtliches</h4>
                     <ul class="space-y-2">
                         <li><a href="datenschutz.html"
-                                class="text-gray-400 hover:text-white transition-colors">Datenschutz</a></li>
+                                class="text-gray-400 hover:text-white transition-colors" data-i18n="footer.privacy">Datenschutz</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2026 DailySunnah. Alle Rechte vorbehalten.</p>
+                <p data-i18n="footer.copyright">&copy; 2026 DailySunnah. Alle Rechte vorbehalten.</p>
             </div>
         </div>
     </footer>
-</body>
 
+    <script>
+        const translations = {
+            de: {
+                'page.title': 'DailySunnah - Dein digitaler Begleiter für den Islam',
+                'nav.features': 'Funktionen',
+                'nav.why': 'Warum DailySunnah?',
+                'nav.download': 'Download',
+                'hero.title': 'Dein digitaler Begleiter für den Islam',
+                'hero.desc': 'Diese App dient zur freiheitlichen Nutzung aller digitalen Lern- und Hilfsmittel rund um den Islam - ohne kostenpflichtige Abonnements. Damit möchten wir unserer Ummah eine angenehme und benutzerfreundliche App zur Verfügung stellen, die uns allen im Alltag unterstützt und unser Wissen über den Islam vertieft.',
+                'download.appstore': 'App Store',
+                'download.playstore': 'Play Store',
+                'features.title': 'Funktionen im Überblick',
+                'features.prayer.title': 'Präzise Gebetszeiten',
+                'features.prayer.desc': 'Pünktlich beten, angepasst an deinen Standort.',
+                'features.qibla.title': 'Qibla-Finder',
+                'features.qibla.desc': 'Die Richtung zur Kaaba in Sekundenschnelle finden.',
+                'features.quiz.title': 'Lehrreiche Quizze',
+                'features.quiz.desc': 'Dein Wissen über den Islam spielerisch vertiefen.',
+                'features.reminders.title': 'Regelmäßige Erinnerungen',
+                'features.reminders.desc': 'Inspiration mit Koran-Versen, Hadithen und mehr.',
+                'features.design.title': 'Intuitives Design',
+                'features.design.desc': 'Optimiert für ein einfaches und angenehmes Erlebnis.',
+                'features.tracker.title': 'Tracker',
+                'features.tracker.desc': 'Verfolge deine Gebete, Dhikr und Fastentage mit Statistiken.',
+                'why.title': 'Warum DailySunnah?',
+                'why.free.title': 'Kostenlos',
+                'why.free.desc': 'Alle Funktionen ohne versteckte Kosten.',
+                'why.authentic.title': 'Authentisch',
+                'why.authentic.desc': 'Sorgfältig geprüfte Inhalte.',
+                'why.privacy.title': 'Datenschutz',
+                'why.privacy.desc': 'Deine Privatsphäre ist uns wichtig – die meisten Daten werden lokal auf deinem Gerät gespeichert.',
+                'why.ummah.title': 'Für die Ummah',
+                'why.ummah.desc': 'Gemeinsam wachsen und das Wissen über den Islam fördern.',
+                'download.title': 'Lade DailySunnah jetzt herunter',
+                'download.desc': 'Beginne deine Reise mit einer App, die deinen Glauben stärkt und dein Wissen erweitert.',
+                'download.pre': 'Download im',
+                'download.appstore2': 'App Store',
+                'download.playstore2': 'Play Store',
+                'footer.tagline': 'Dein digitaler Begleiter für den Islam.',
+                'footer.imprint.title': 'Impressum',
+                'footer.legal.title': 'Rechtliches',
+                'footer.privacy': 'Datenschutz',
+                'footer.copyright': '© 2026 DailySunnah. Alle Rechte vorbehalten.'
+            },
+            en: {
+                'page.title': 'DailySunnah - Your digital companion for Islam',
+                'nav.features': 'Features',
+                'nav.why': 'Why DailySunnah?',
+                'nav.download': 'Download',
+                'hero.title': 'Your digital companion for Islam',
+                'hero.desc': 'This app is for the free use of all digital learning and assistance tools around Islam - without paid subscriptions. With this we want to provide our Ummah with a pleasant and user-friendly app that supports all of us in everyday life and deepens our knowledge about Islam.',
+                'download.appstore': 'App Store',
+                'download.playstore': 'Play Store',
+                'features.title': 'Features Overview',
+                'features.prayer.title': 'Accurate Prayer Times',
+                'features.prayer.desc': 'Pray on time, adjusted to your location.',
+                'features.qibla.title': 'Qibla Finder',
+                'features.qibla.desc': 'Find the direction to the Kaaba in seconds.',
+                'features.quiz.title': 'Educational Quizzes',
+                'features.quiz.desc': 'Deepen your knowledge about Islam playfully.',
+                'features.reminders.title': 'Regular Reminders',
+                'features.reminders.desc': 'Inspiration with Quran verses, Hadiths and more.',
+                'features.design.title': 'Intuitive Design',
+                'features.design.desc': 'Optimized for a simple and pleasant experience.',
+                'features.tracker.title': 'Tracker',
+                'features.tracker.desc': 'Track your prayers, Dhikr and fasting days with statistics.',
+                'why.title': 'Why DailySunnah?',
+                'why.free.title': 'Free of Charge',
+                'why.free.desc': 'All features without hidden costs.',
+                'why.authentic.title': 'Authentic',
+                'why.authentic.desc': 'Carefully verified content.',
+                'why.privacy.title': 'Privacy',
+                'why.privacy.desc': 'Your privacy is important to us - most data is stored locally on your device.',
+                'why.ummah.title': 'For the Ummah',
+                'why.ummah.desc': 'Growing together and promoting knowledge about Islam.',
+                'download.title': 'Download DailySunnah now',
+                'download.desc': 'Start your journey with an app that strengthens your faith and expands your knowledge.',
+                'download.pre': 'Download on the',
+                'download.appstore2': 'App Store',
+                'download.playstore2': 'Play Store',
+                'footer.tagline': 'Your digital companion for Islam.',
+                'footer.imprint.title': 'Legal Notice',
+                'footer.legal.title': 'Legal',
+                'footer.privacy': 'Privacy Policy',
+                'footer.copyright': '© 2026 DailySunnah. All rights reserved.'
+            }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem('dailysunnah-lang', lang);
+            document.documentElement.lang = lang;
+            
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update title
+            if (translations[lang]['page.title']) {
+                document.title = translations[lang]['page.title'];
+            }
+            
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                    btn.classList.remove('text-gray-700');
+                } else {
+                    btn.classList.remove('active');
+                    btn.classList.add('text-gray-700');
+                }
+            });
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if user has manually selected a language before
+            const savedLang = localStorage.getItem('dailysunnah-lang');
+            
+            if (savedLang) {
+                // Use saved preference
+                setLanguage(savedLang);
+            } else {
+                // Auto-detect browser language
+                const browserLang = navigator.language || navigator.userLanguage;
+                
+                // If browser language starts with 'en', use English, otherwise German
+                const detectedLang = browserLang && browserLang.toLowerCase().startsWith('en') ? 'en' : 'de';
+                
+                setLanguage(detectedLang);
+            }
+        });
+    </script>
+</body>
 </html>
