@@ -1,42 +1,58 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutzerklärung - DailySunnah App</title>
+    <title>Datenschutzerklärung / Privacy Policy - DailySunnah App</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
+
         .legal-text {
             font-family: 'Merriweather', serif;
             line-height: 1.8;
         }
+
         .smooth-scroll {
             scroll-behavior: smooth;
         }
+
         .nav-active {
             background-color: rgb(243, 244, 246);
             border-left: 3px solid rgb(22, 163, 74);
             color: rgb(22, 101, 52);
             font-weight: 500;
         }
+
         @media (max-width: 1024px) {
             .nav-active {
                 border-left: none;
                 border-bottom: 3px solid rgb(22, 163, 74);
             }
         }
+
+        /* Language Toggle Logic */
+        body.en .lang-de {
+            display: none !important;
+        }
+
+        body:not(.en) .lang-en {
+            display: none !important;
+        }
     </style>
 </head>
+
 <body class="bg-gray-50 text-gray-800 smooth-scroll">
 
-    <!-- Header -->
     <header class="bg-emerald-900 text-white sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div class="flex items-center justify-between">
@@ -46,635 +62,939 @@
                     </div>
                     <div>
                         <h1 class="text-xl font-bold tracking-tight">DailySunnah</h1>
-                        <p class="text-emerald-200 text-xs uppercase tracking-wider">Datenschutzerklärung</p>
+                        <p class="text-emerald-200 text-xs uppercase tracking-wider">
+                            <span class="lang-de">Datenschutzerklärung</span>
+                            <span class="lang-en">Privacy Policy</span>
+                        </p>
                     </div>
                 </div>
-                <div class="text-sm text-emerald-200 hidden sm:block">
-                    Stand: 22.02.2026
+
+                <div class="flex items-center space-x-4">
+                    <div class="text-sm text-emerald-200 hidden sm:block">
+                        <span class="lang-de">Stand:</span><span class="lang-en">Last updated:</span> 22.02.2026
+                    </div>
+
+                    <div class="flex bg-emerald-800 rounded-lg p-1">
+                        <button id="btn-de" class="px-3 py-1 text-xs sm:text-sm font-medium rounded-md bg-white text-emerald-900 shadow-sm transition-all">DE</button>
+                        <button id="btn-en" class="px-3 py-1 text-xs sm:text-sm font-medium rounded-md text-emerald-100 hover:text-white transition-all">EN</button>
+                    </div>
+
+                    <button id="menuBtn" class="lg:hidden p-2 hover:bg-emerald-800 rounded-lg transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
                 </div>
-                <button id="menuBtn" class="lg:hidden p-2 hover:bg-emerald-800 rounded-lg transition-colors">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
             </div>
         </div>
     </header>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="lg:grid lg:grid-cols-12 lg:gap-8">
-            
-            <!-- Mobile Navigation Menu (hidden by default) -->
-            <div id="mobileNav" class="hidden lg:hidden mb-6 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+
+            <div id="mobileNav"
+                class="hidden lg:hidden mb-6 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 <nav class="flex overflow-x-auto py-2 px-2 space-x-2 no-scrollbar">
-                    <a href="#verantwortlicher" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Verantwortlicher</a>
-                    <a href="#gegenstand" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Gegenstand</a>
-                    <a href="#grundsaetze" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Grundsätze</a>
-                    <a href="#lokale-speicherung" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Lokale Daten</a>
-                    <a href="#standort" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Standort</a>
-                    <a href="#apis" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Externe APIs</a>
-                    <a href="#push" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Push-Benachrichtigungen</a>
-                    <a href="#bewertung" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Bewertungen</a>
-                    <a href="#werbung" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Werbung</a>
-                    <a href="#drittlaender" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Drittländer</a>
-                    <a href="#kontakt" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Kontakt</a>
-                    <a href="#rechte" class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">Ihre Rechte</a>
+                    <a href="#verantwortlicher"
+                        class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">
+                        <span class="lang-de">Verantwortlicher</span><span class="lang-en">Controller</span>
+                    </a>
+                    <a href="#gegenstand"
+                        class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">
+                        <span class="lang-de">Gegenstand</span><span class="lang-en">Scope</span>
+                    </a>
+                    <a href="#grundsaetze"
+                        class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">
+                        <span class="lang-de">Grundsätze</span><span class="lang-en">Principles</span>
+                    </a>
+                    <a href="#lokale-speicherung"
+                        class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">
+                        <span class="lang-de">Lokale Daten</span><span class="lang-en">Local Data</span>
+                    </a>
+                    <a href="#standort"
+                        class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">
+                        <span class="lang-de">Standort</span><span class="lang-en">Location</span>
+                    </a>
+                    <a href="#apis"
+                        class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">
+                        <span class="lang-de">Externe APIs</span><span class="lang-en">External APIs</span>
+                    </a>
+                    <a href="#push"
+                        class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">
+                        <span class="lang-de">Push-Benachr.</span><span class="lang-en">Push Notif.</span>
+                    </a>
+                    <a href="#bewertung"
+                        class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">
+                        <span class="lang-de">Bewertungen</span><span class="lang-en">Reviews</span>
+                    </a>
+                    <a href="#werbung"
+                        class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">
+                        <span class="lang-de">Werbung</span><span class="lang-en">Advertising</span>
+                    </a>
+                    <a href="#drittlaender"
+                        class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">
+                        <span class="lang-de">Drittländer</span><span class="lang-en">Third Countries</span>
+                    </a>
+                    <a href="#kontakt"
+                        class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">
+                        <span class="lang-de">Kontakt</span><span class="lang-en">Contact</span>
+                    </a>
+                    <a href="#rechte"
+                        class="nav-item-mobile whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors">
+                        <span class="lang-de">Ihre Rechte</span><span class="lang-en">Your Rights</span>
+                    </a>
                 </nav>
             </div>
 
-            <!-- Desktop Sidebar Navigation -->
             <aside class="hidden lg:block lg:col-span-3">
                 <nav class="sticky top-24 space-y-1 overflow-y-auto max-h-[calc(100vh-8rem)] pr-2">
-                    <a href="#verantwortlicher" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                    <a href="#verantwortlicher"
+                        class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
                         <span class="flex items-center gap-2">
                             <i data-lucide="user-check" class="w-4 h-4"></i>
-                            Verantwortlicher
+                            <span class="lang-de">Verantwortlicher</span><span class="lang-en">Data Controller</span>
                         </span>
                     </a>
-                    <a href="#gegenstand" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                    <a href="#gegenstand"
+                        class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
                         <span class="flex items-center gap-2">
                             <i data-lucide="file-text" class="w-4 h-4"></i>
-                            Gegenstand
+                            <span class="lang-de">Gegenstand</span><span class="lang-en">Scope</span>
                         </span>
                     </a>
-                    <a href="#grundsaetze" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                    <a href="#grundsaetze"
+                        class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
                         <span class="flex items-center gap-2">
                             <i data-lucide="scale" class="w-4 h-4"></i>
-                            Grundsätze
+                            <span class="lang-de">Grundsätze</span><span class="lang-en">Principles</span>
                         </span>
                     </a>
-                    <a href="#lokale-speicherung" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                    <a href="#lokale-speicherung"
+                        class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
                         <span class="flex items-center gap-2">
                             <i data-lucide="smartphone" class="w-4 h-4"></i>
-                            Lokale Speicherung
+                            <span class="lang-de">Lokale Speicherung</span><span class="lang-en">Local Data Storage</span>
                         </span>
                     </a>
-                    <a href="#standort" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                    <a href="#standort"
+                        class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
                         <span class="flex items-center gap-2">
                             <i data-lucide="map-pin" class="w-4 h-4"></i>
-                            Standortdaten
+                            <span class="lang-de">Standortdaten</span><span class="lang-en">Location Data</span>
                         </span>
                     </a>
-                    <a href="#apis" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                    <a href="#apis"
+                        class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
                         <span class="flex items-center gap-2">
                             <i data-lucide="cloud" class="w-4 h-4"></i>
-                            Externe APIs
+                            <span class="lang-de">Externe APIs</span><span class="lang-en">External APIs</span>
                         </span>
                     </a>
-                    <a href="#push" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                    <a href="#push"
+                        class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
                         <span class="flex items-center gap-2">
                             <i data-lucide="bell" class="w-4 h-4"></i>
-                            Push-Benachrichtigungen
+                            <span class="lang-de">Push-Benachrichtigungen</span><span class="lang-en">Push Notifications</span>
                         </span>
                     </a>
-                    <a href="#bewertung" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                    <a href="#bewertung"
+                        class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
                         <span class="flex items-center gap-2">
                             <i data-lucide="star" class="w-4 h-4"></i>
-                            Nutzerbewertung
+                            <span class="lang-de">Nutzerbewertung</span><span class="lang-en">User Reviews</span>
                         </span>
                     </a>
-                    <a href="#werbung" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                    <a href="#werbung"
+                        class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
                         <span class="flex items-center gap-2">
                             <i data-lucide="megaphone" class="w-4 h-4"></i>
-                            Werbung (AdMob)
+                            <span class="lang-de">Werbung (AdMob)</span><span class="lang-en">Advertising (AdMob)</span>
                         </span>
                     </a>
-                    <a href="#drittlaender" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                    <a href="#drittlaender"
+                        class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
                         <span class="flex items-center gap-2">
                             <i data-lucide="globe" class="w-4 h-4"></i>
-                            Drittländer
+                            <span class="lang-de">Drittländer</span><span class="lang-en">Third Countries</span>
                         </span>
                     </a>
-                    <a href="#kontakt" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                    <a href="#kontakt"
+                        class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
                         <span class="flex items-center gap-2">
                             <i data-lucide="mail" class="w-4 h-4"></i>
-                            Kontaktaufnahme
+                            <span class="lang-de">Kontaktaufnahme</span><span class="lang-en">Contact</span>
                         </span>
                     </a>
-                    <a href="#rechte" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                    <a href="#rechte"
+                        class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
                         <span class="flex items-center gap-2">
                             <i data-lucide="shield" class="w-4 h-4"></i>
-                            Ihre Rechte
+                            <span class="lang-de">Ihre Rechte</span><span class="lang-en">Your Rights</span>
                         </span>
                     </a>
-                    <a href="#beschwerde" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                    <a href="#beschwerde"
+                        class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
                         <span class="flex items-center gap-2">
                             <i data-lucide="alert-circle" class="w-4 h-4"></i>
-                            Beschwerderecht
+                            <span class="lang-de">Beschwerderecht</span><span class="lang-en">Right to Complain</span>
                         </span>
                     </a>
-                    <a href="#sicherheit" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                    <a href="#sicherheit"
+                        class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
                         <span class="flex items-center gap-2">
                             <i data-lucide="lock" class="w-4 h-4"></i>
-                            Datensicherheit
+                            <span class="lang-de">Datensicherheit</span><span class="lang-en">Data Security</span>
                         </span>
                     </a>
-                    <a href="#aenderungen" class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
+                    <a href="#aenderungen"
+                        class="nav-item block px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-emerald-700 transition-colors border-l-3 border-transparent">
                         <span class="flex items-center gap-2">
                             <i data-lucide="refresh-cw" class="w-4 h-4"></i>
-                            Änderungen
+                            <span class="lang-de">Änderungen</span><span class="lang-en">Changes</span>
                         </span>
                     </a>
                 </nav>
             </aside>
 
-            <!-- Main Content -->
             <main class="lg:col-span-9">
                 <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-                    
-                    <!-- Title Section -->
+
                     <div class="bg-emerald-50 border-b border-emerald-100 p-6 sm:p-8">
-                        <h2 class="text-3xl font-bold text-emerald-900 mb-2">Datenschutzerklärung</h2>
-                        <p class="text-emerald-700 font-medium">für die App „DailySunnah"</p>
-                        <div class="mt-4 inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold">
+                        <h2 class="text-3xl font-bold text-emerald-900 mb-2">
+                            <span class="lang-de">Datenschutzerklärung</span>
+                            <span class="lang-en">Privacy Policy</span>
+                        </h2>
+                        <p class="text-emerald-700 font-medium">
+                            <span class="lang-de">für die App „DailySunnah"</span>
+                            <span class="lang-en">for the "DailySunnah" App</span>
+                        </p>
+                        <div
+                            class="mt-4 inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold">
                             <i data-lucide="calendar" class="w-3 h-3 mr-1"></i>
-                            Stand: 22.02.2026
+                            <span class="lang-de">Stand:</span><span class="lang-en">Last updated:</span> 22.02.2026
                         </div>
                     </div>
 
                     <div class="p-6 sm:p-8 space-y-12">
 
-                        <!-- Section: Verantwortlicher -->
                         <section id="verantwortlicher" class="scroll-mt-24">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="p-2 bg-emerald-100 rounded-lg">
                                     <i data-lucide="user-check" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Verantwortlicher</h3>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    <span class="lang-de">Verantwortlicher</span>
+                                    <span class="lang-en">Data Controller</span>
+                                </h3>
                             </div>
                             <div class="legal-text text-gray-700 pl-11">
-                                <p class="mb-4">Verantwortlich für die Verarbeitung personenbezogener Daten im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
+                                <p class="mb-4 lang-de">Verantwortlich für die Verarbeitung personenbezogener Daten im
+                                    Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
+                                <p class="mb-4 lang-en">The data controller responsible for processing personal data
+                                    under the General Data Protection Regulation (GDPR) is:</p>
+
                                 <div class="bg-gray-50 rounded-lg p-4 border-l-4 border-emerald-500 my-4">
                                     <p class="font-semibold text-gray-900">Faruk Türkaslan</p>
                                     <p class="text-gray-600">c/o Postflex #8786</p>
                                     <p class="text-gray-600">Emsdettener Str. 10</p>
                                     <p class="text-gray-600">48268 Greven</p>
-                                    <a href="mailto:info@dailysunnah.app" class="text-emerald-600 hover:text-emerald-800 underline mt-2 inline-block">
+                                    <p class="text-gray-600">
+                                        <span class="lang-de">Deutschland</span><span class="lang-en">Germany</span></p>
+                                    <a href="mailto:info@dailysunnah.app"
+                                        class="text-emerald-600 hover:text-emerald-800 underline mt-2 inline-block">
                                         info@dailysunnah.app
                                     </a>
                                 </div>
                             </div>
                         </section>
 
-                        <!-- Section: Gegenstand -->
                         <section id="gegenstand" class="scroll-mt-24">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="p-2 bg-emerald-100 rounded-lg">
                                     <i data-lucide="file-text" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Gegenstand dieser Datenschutzerklärung</h3>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    <span class="lang-de">Gegenstand dieser Datenschutzerklärung</span>
+                                    <span class="lang-en">Scope of this Privacy Policy</span>
+                                </h3>
                             </div>
                             <div class="legal-text text-gray-700 pl-11">
-                                <p>Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten bei der Nutzung der App „DailySunnah" verarbeitet werden, zu welchen Zwecken dies geschieht, auf welcher Rechtsgrundlage die Verarbeitung beruht und welche Rechte Ihnen zustehen.</p>
+                                <p class="lang-de">Diese Datenschutzerklärung informiert darüber, welche
+                                    personenbezogenen Daten bei der Nutzung der App „DailySunnah" verarbeitet werden, zu
+                                    welchen Zwecken dies geschieht, auf welcher Rechtsgrundlage die Verarbeitung beruht
+                                    und welche Rechte Ihnen zustehen.</p>
+                                <p class="lang-en">This privacy policy informs you about which personal data is
+                                    processed when using the "DailySunnah" app, the purposes for which this is done, the
+                                    legal basis for processing, and the rights to which you are entitled.</p>
                             </div>
                         </section>
 
-                        <!-- Section: Grundsätze -->
                         <section id="grundsaetze" class="scroll-mt-24">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="p-2 bg-emerald-100 rounded-lg">
                                     <i data-lucide="scale" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Grundsätze der Datenverarbeitung</h3>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    <span class="lang-de">Grundsätze der Datenverarbeitung</span>
+                                    <span class="lang-en">Principles of Data Processing</span>
+                                </h3>
                             </div>
                             <div class="legal-text text-gray-700 pl-11">
-                                <p>Wir verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung der App-Funktionen erforderlich ist oder Sie in eine Verarbeitung eingewilligt haben (z. B. Standort oder Push-Benachrichtigungen). Wir betreiben keine eigenen Server zur Speicherung Ihrer in der App erfassten Planer- oder Quiz-Daten.</p>
+                                <p class="lang-de">Wir verarbeiten personenbezogene Daten nur, soweit dies zur
+                                    Bereitstellung der App-Funktionen erforderlich ist oder Sie in eine Verarbeitung
+                                    eingewilligt haben (z. B. Standort oder Push-Benachrichtigungen). Wir betreiben
+                                    keine eigenen Server zur Speicherung Ihrer in der App erfassten Planer- oder
+                                    Quiz-Daten.</p>
+                                <p class="lang-en">We process personal data only to the extent necessary to provide the
+                                    app's functions or if you have consented to such processing (e.g., location or push
+                                    notifications). We do not operate our own servers to store your planner or quiz data
+                                    entered in the app.</p>
                             </div>
                         </section>
 
-                        <!-- Section: Lokale Speicherung -->
                         <section id="lokale-speicherung" class="scroll-mt-24">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="p-2 bg-emerald-100 rounded-lg">
                                     <i data-lucide="smartphone" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Lokale Speicherung auf Ihrem Gerät</h3>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    <span class="lang-de">Lokale Speicherung auf Ihrem Gerät</span>
+                                    <span class="lang-en">Local Data Storage on Your Device</span>
+                                </h3>
                             </div>
                             <div class="legal-text text-gray-700 pl-11">
-                                <p class="mb-4">Die App ermöglicht u. a. das Erfassen und Tracken von Terminen, To-dos, Gebeten, Dhikr, Spenden sowie die Nutzung einer Quiz-Funktion. Diese Daten werden nach aktuellem Funktionsumfang überwiegend lokal auf Ihrem Endgerät gespeichert.</p>
-                                
+                                <p class="mb-4 lang-de">Die App ermöglicht u. a. das Erfassen und Tracken von Terminen,
+                                    To-dos, Gebeten, Dhikr, Spenden sowie die Nutzung einer Quiz-Funktion. Diese Daten
+                                    werden nach aktuellem Funktionsumfang überwiegend lokal auf Ihrem Endgerät
+                                    gespeichert.</p>
+                                <p class="mb-4 lang-en">The app allows you to record and track appointments, to-dos,
+                                    prayers, dhikr, donations, and use a quiz function. Based on the current scope of
+                                    features, this data is mostly stored locally on your device.</p>
+
                                 <div class="space-y-4 mt-4">
                                     <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Welche Daten:</h4>
+                                        <h4 class="font-semibold text-gray-900 mb-2">
+                                            <span class="lang-de">Welche Daten:</span>
+                                            <span class="lang-en">Which data:</span>
+                                        </h4>
                                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>Von Ihnen eingegebene Inhalte (z. B. Planer-/Tracking-Einträge, Quiz-Fortschritt)</li>
-                                            <li>App-Einstellungen (z. B. ausgewählte Anzeigeoptionen)</li>
+                                            <li>
+                                                <span class="lang-de">Von Ihnen eingegebene Inhalte (z. B. Planer-/Tracking-Einträge, Quiz-Fortschritt)</span>
+                                                <span class="lang-en">Content entered by you (e.g., planner/tracking entries, quiz progress)</span>
+                                            </li>
+                                            <li>
+                                                <span class="lang-de">App-Einstellungen (z. B. ausgewählte Anzeigeoptionen)</span>
+                                                <span class="lang-en">App settings (e.g., selected display options)</span>
+                                            </li>
                                         </ul>
                                     </div>
-                                    
+
                                     <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Zweck:</h4>
+                                        <h4 class="font-semibold text-gray-900 mb-2">
+                                            <span class="lang-de">Zweck:</span>
+                                            <span class="lang-en">Purpose:</span>
+                                        </h4>
                                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>Bereitstellung der jeweiligen App-Funktionen</li>
-                                            <li>Speicherung Ihrer Einstellungen und Fortschritte</li>
+                                            <li>
+                                                <span class="lang-de">Bereitstellung der jeweiligen App-Funktionen</span>
+                                                <span class="lang-en">Providing the respective app functions</span>
+                                            </li>
+                                            <li>
+                                                <span class="lang-de">Speicherung Ihrer Einstellungen und Fortschritte</span>
+                                                <span class="lang-en">Storing your settings and progress</span>
+                                            </li>
                                         </ul>
                                     </div>
 
                                     <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                                        <h4 class="font-semibold text-emerald-900 mb-2">Rechtsgrundlage:</h4>
-                                        <p class="text-emerald-800 text-sm">Art. 6 Abs. 1 lit. b DSGVO (Vertrag/vertragsähnliche Nutzung der App-Funktionen) und/oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer funktionsfähigen App)</p>
+                                        <h4 class="font-semibold text-emerald-900 mb-2">
+                                            <span class="lang-de">Rechtsgrundlage:</span>
+                                            <span class="lang-en">Legal basis:</span>
+                                        </h4>
+                                        <p class="text-emerald-800 text-sm">
+                                            <span class="lang-de">Art. 6 Abs. 1 lit. b DSGVO (Vertrag/vertragsähnliche Nutzung der App-Funktionen) und/oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer funktionsfähigen App)</span>
+                                            <span class="lang-en">Art. 6 (1) (b) GDPR (contractual/contract-like use of app functions) and/or Art. 6 (1) (f) GDPR (legitimate interest in providing a functional app)</span>
+                                        </p>
                                     </div>
 
                                     <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Empfänger:</h4>
-                                        <p class="text-gray-700">Keine Übermittlung dieser lokalen Inhalte an uns</p>
+                                        <h4 class="font-semibold text-gray-900 mb-2">
+                                            <span class="lang-de">Empfänger:</span>
+                                            <span class="lang-en">Recipients:</span>
+                                        </h4>
+                                        <p class="text-gray-700">
+                                            <span class="lang-de">Keine Übermittlung dieser lokalen Inhalte an uns</span>
+                                            <span class="lang-en">No transmission of this local content to us</span>
+                                        </p>
                                     </div>
 
                                     <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Speicherdauer/Löschung:</h4>
-                                        <p class="text-gray-700">Die Daten bleiben auf Ihrem Gerät, bis Sie sie in der App löschen, die App-Daten löschen oder die App deinstallieren.</p>
+                                        <h4 class="font-semibold text-gray-900 mb-2">
+                                            <span class="lang-de">Speicherdauer/Löschung:</span>
+                                            <span class="lang-en">Retention/Deletion:</span>
+                                        </h4>
+                                        <p class="text-gray-700">
+                                            <span class="lang-de">Die Daten bleiben auf Ihrem Gerät, bis Sie sie in der App löschen, die App-Daten löschen oder die App deinstallieren.</span>
+                                            <span class="lang-en">The data remains on your device until you delete it in the app, clear the app's storage, or uninstall the app.</span>
+                                        </p>
                                     </div>
                                 </div>
 
                                 <div class="mt-4 bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-                                    <p class="text-amber-800 font-medium mb-1">Hinweis zu Geräte-Backups:</p>
-                                    <p class="text-amber-700 text-sm">Je nach Betriebssystem können lokale App-Daten in Sicherungen (z. B. Cloud-Backups des Geräts) enthalten sein. Für diese Sicherungen ist der jeweilige Betriebssystem-/Cloud-Anbieter verantwortlich.</p>
+                                    <p class="text-amber-800 font-medium mb-1">
+                                        <span class="lang-de">Hinweis zu Geräte-Backups:</span>
+                                        <span class="lang-en">Note on device backups:</span>
+                                    </p>
+                                    <p class="text-amber-700 text-sm">
+                                        <span class="lang-de">Je nach Betriebssystem können lokale App-Daten in Sicherungen (z. B. Cloud-Backups des Geräts) enthalten sein. Für diese Sicherungen ist der jeweilige Betriebssystem-/Cloud-Anbieter verantwortlich.</span>
+                                        <span class="lang-en">Depending on the operating system, local app data may be included in device backups (e.g., cloud backups). The respective operating system/cloud provider is responsible for these backups.</span>
+                                    </p>
                                 </div>
                             </div>
                         </section>
 
-                        <!-- Section: Standortdaten -->
                         <section id="standort" class="scroll-mt-24">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="p-2 bg-emerald-100 rounded-lg">
                                     <i data-lucide="map-pin" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Standortdaten (Gebetszeiten und Qibla)</h3>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    <span class="lang-de">Standortdaten (Gebetszeiten und Qibla)</span>
+                                    <span class="lang-en">Location Data (Prayer Times and Qibla)</span>
+                                </h3>
                             </div>
                             <div class="legal-text text-gray-700 pl-11">
-                                <p class="mb-4">Für die Berechnung der Gebetszeiten sowie die Qibla-Funktion kann die App auf Standortdaten zugreifen, sofern Sie dies über die Geräteberechtigung erlauben.</p>
-                                
+                                <p class="mb-4">
+                                    <span class="lang-de">Für die Berechnung der Gebetszeiten sowie die Qibla-Funktion kann die App auf Standortdaten zugreifen, sofern Sie dies über die Geräteberechtigung erlauben.</span>
+                                    <span class="lang-en">For calculating prayer times and displaying the Qibla, the app can access your location data, provided you allow this via your device permissions.</span>
+                                </p>
+
                                 <div class="space-y-4 mt-4">
                                     <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Welche Daten:</h4>
-                                        <p class="text-gray-700">Standortdaten (Koordinaten), ggf. abgeleitete Ortsinformationen</p>
+                                        <h4 class="font-semibold text-gray-900 mb-2">
+                                            <span class="lang-de">Welche Daten:</span>
+                                            <span class="lang-en">Which data:</span>
+                                        </h4>
+                                        <p class="text-gray-700">
+                                            <span class="lang-de">Standortdaten (Koordinaten), ggf. abgeleitete Ortsinformationen</span>
+                                            <span class="lang-en">Location data (coordinates), and potentially derived location information</span>
+                                        </p>
                                     </div>
-                                    
+
                                     <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Zweck:</h4>
+                                        <h4 class="font-semibold text-gray-900 mb-2">
+                                            <span class="lang-de">Zweck:</span>
+                                            <span class="lang-en">Purpose:</span>
+                                        </h4>
                                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>Gebetszeiten anhand Ihres Standorts berechnen</li>
-                                            <li>Qibla-Richtung anzeigen</li>
+                                            <li>
+                                                <span class="lang-de">Gebetszeiten anhand Ihres Standorts berechnen</span>
+                                                <span class="lang-en">Calculating prayer times based on your location</span>
+                                            </li>
+                                            <li>
+                                                <span class="lang-de">Qibla-Richtung anzeigen</span>
+                                                <span class="lang-en">Displaying the Qibla direction</span>
+                                            </li>
                                         </ul>
                                     </div>
 
                                     <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Speicherung:</h4>
-                                        <p class="text-gray-700">Standort/Koordinaten können lokal auf Ihrem Gerät gespeichert werden (z. B. zuletzt verwendeter Standort), damit Sie diese nicht erneut eingeben müssen.</p>
+                                        <h4 class="font-semibold text-gray-900 mb-2">
+                                            <span class="lang-de">Speicherung:</span>
+                                            <span class="lang-en">Storage:</span>
+                                        </h4>
+                                        <p class="text-gray-700">
+                                            <span class="lang-de">Standort/Koordinaten können lokal auf Ihrem Gerät gespeichert werden (z. B. zuletzt verwendeter Standort), damit Sie diese nicht erneut eingeben müssen.</span>
+                                            <span class="lang-en">Location/coordinates can be stored locally on your device (e.g., last used location) so you don't have to fetch them repeatedly.</span>
+                                        </p>
                                     </div>
 
                                     <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                                        <h4 class="font-semibold text-emerald-900 mb-2">Rechtsgrundlage:</h4>
-                                        <p class="text-emerald-800 text-sm">Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Die Einwilligung erteilen Sie über die Standortberechtigung Ihres Geräts und können sie jederzeit in den Geräteeinstellungen widerrufen.</p>
+                                        <h4 class="font-semibold text-emerald-900 mb-2">
+                                            <span class="lang-de">Rechtsgrundlage:</span>
+                                            <span class="lang-en">Legal basis:</span>
+                                        </h4>
+                                        <p class="text-emerald-800 text-sm">
+                                            <span class="lang-de">Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Die Einwilligung erteilen Sie über die Standortberechtigung Ihres Geräts und können sie jederzeit in den Geräteeinstellungen widerrufen.</span>
+                                            <span class="lang-en">Art. 6 (1) (a) GDPR (consent). You grant this consent via your device's location permissions and can revoke it at any time in the device settings.</span>
+                                        </p>
                                     </div>
                                 </div>
 
                                 <div class="mt-4 bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
-                                    <p class="text-blue-800 font-medium mb-1">Hinweis:</p>
-                                    <p class="text-blue-700 text-sm">Zur Berechnung der Gebetszeiten werden Anfragen an externe Dienste gestellt. Dabei werden technisch bedingt Verbindungsdaten (insbesondere die IP-Adresse) verarbeitet. Wenn Sie Gebetszeiten anhand Ihres Standorts nutzen oder einen Standort eingeben, können Koordinaten an den jeweiligen Dienst übermittelt werden (siehe Abschnitt 6).</p>
+                                    <p class="text-blue-800 font-medium mb-1">
+                                        <span class="lang-de">Hinweis:</span>
+                                        <span class="lang-en">Note:</span>
+                                    </p>
+                                    <p class="text-blue-700 text-sm">
+                                        <span class="lang-de">Zur Berechnung der Gebetszeiten werden Anfragen an externe Dienste gestellt. Dabei werden technisch bedingt Verbindungsdaten (insbesondere die IP-Adresse) verarbeitet. Wenn Sie Gebetszeiten anhand Ihres Standorts nutzen oder einen Standort eingeben, können Koordinaten an den jeweiligen Dienst übermittelt werden (siehe Abschnitt 6).</span>
+                                        <span class="lang-en">To calculate prayer times, requests are made to external services. For technical reasons, connection data (especially the IP address) is processed. If you use prayer times based on your location, coordinates may be transmitted to the respective service (see External APIs).</span>
+                                    </p>
                                 </div>
                             </div>
                         </section>
 
-                        <!-- Section: Externe APIs -->
                         <section id="apis" class="scroll-mt-24">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="p-2 bg-emerald-100 rounded-lg">
                                     <i data-lucide="cloud" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Externe APIs</h3>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    <span class="lang-de">Externe APIs</span>
+                                    <span class="lang-en">External APIs</span>
+                                </h3>
                             </div>
                             <div class="legal-text text-gray-700 pl-11">
-                                <p class="mb-4">Die App ruft Inhalte und Daten von externen Diensten ab, um Funktionen wie Gebetszeiten, Qur'an-Text, Übersetzungen, Transliteration und Rezitation (Audio) bereitzustellen. Dabei werden technisch bedingt Verbindungsdaten verarbeitet.</p>
-                                
+                                <p class="mb-4">
+                                    <span class="lang-de">Die App ruft Inhalte und Daten von externen Diensten ab, um Funktionen wie Gebetszeiten, Qur'an-Text, Übersetzungen, Transliteration und Rezitation (Audio) bereitzustellen. Dabei werden technisch bedingt Verbindungsdaten verarbeitet.</span>
+                                    <span class="lang-en">The app retrieves content and data from external services to provide features like prayer times, Qur'an texts, translations, transliteration, and audio recitation. Technically necessary connection data is processed in this context.</span>
+                                </p>
+
                                 <div class="bg-gray-50 rounded-lg p-4 mb-4">
-                                    <h4 class="font-semibold text-gray-900 mb-3">Eingesetzte Dienste:</h4>
+                                    <h4 class="font-semibold text-gray-900 mb-3">
+                                        <span class="lang-de">Eingesetzte Dienste:</span>
+                                        <span class="lang-en">Services used:</span>
+                                    </h4>
                                     <ul class="space-y-2 text-sm text-gray-700">
-                                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-emerald-500 rounded-full"></span>aladhan.com (Gebetszeiten)</li>
-                                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-emerald-500 rounded-full"></span>quranEnc.com (Qur'an-Übersetzungen)</li>
-                                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-emerald-500 rounded-full"></span>AlQuran.cloud API (Qur'an-Text und Transliteration)</li>
-                                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-emerald-500 rounded-full"></span>everyayah.com (Rezitation/Audio)</li>
+                                        <li class="flex items-center gap-2">
+                                            <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                                            <span class="lang-de">aladhan.com (Gebetszeiten)</span>
+                                            <span class="lang-en">aladhan.com (Prayer times)</span>
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                                            <span class="lang-de">quranEnc.com (Qur'an-Übersetzungen)</span>
+                                            <span class="lang-en">quranEnc.com (Qur'an translations)</span>
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                                            <span class="lang-de">AlQuran.cloud API (Qur'an-Text und Transliteration)</span>
+                                            <span class="lang-en">AlQuran.cloud API (Qur'an text and transliteration)</span>
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                                            <span class="lang-de">everyayah.com (Rezitation/Audio)</span>
+                                            <span class="lang-en">everyayah.com (Recitation/Audio)</span>
+                                        </li>
                                     </ul>
                                 </div>
 
                                 <div class="space-y-4">
                                     <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Welche Daten:</h4>
+                                        <h4 class="font-semibold text-gray-900 mb-2">
+                                            <span class="lang-de">Welche Daten:</span>
+                                            <span class="lang-en">Which data:</span>
+                                        </h4>
                                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>Verbindungsdaten (insbesondere IP-Adresse, Zeitpunkt der Anfrage, technisch notwendige Verbindungsinformationen)</li>
-                                            <li>Bei Gebetszeiten zusätzlich: Standortdaten/Koordinaten, sofern Sie diese Funktion nutzen</li>
+                                            <li>
+                                                <span class="lang-de">Verbindungsdaten (insbesondere IP-Adresse, Zeitpunkt der Anfrage, technisch notwendige Verbindungsinformationen)</span>
+                                                <span class="lang-en">Connection data (especially IP address, time of request, technically necessary connection info)</span>
+                                            </li>
+                                            <li>
+                                                <span class="lang-de">Bei Gebetszeiten zusätzlich: Standortdaten/Koordinaten, sofern Sie diese Funktion nutzen</span>
+                                                <span class="lang-en">For prayer times additionally: Location data/coordinates, if you use this function</span>
+                                            </li>
                                         </ul>
                                     </div>
 
                                     <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                                        <h4 class="font-semibold text-emerald-900 mb-2">Rechtsgrundlage:</h4>
-                                        <p class="text-emerald-800 text-sm">Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der App-Funktionen) und/oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer funktionsfähigen App). Soweit Standortdaten übermittelt werden: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</p>
+                                        <h4 class="font-semibold text-emerald-900 mb-2">
+                                            <span class="lang-de">Rechtsgrundlage:</span>
+                                            <span class="lang-en">Legal basis:</span>
+                                        </h4>
+                                        <p class="text-emerald-800 text-sm">
+                                            <span class="lang-de">Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der App-Funktionen) und/oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer funktionsfähigen App). Soweit Standortdaten übermittelt werden: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</span>
+                                            <span class="lang-en">Art. 6 (1) (b) GDPR (providing app functions) and/or Art. 6 (1) (f) GDPR (legitimate interest in providing a functional app). Insofar as location data is transmitted: Art. 6 (1) (a) GDPR (consent)</span>
+                                        </p>
                                     </div>
 
                                     <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Empfänger:</h4>
-                                        <p class="text-gray-700">Die genannten externen Anbieter als Empfänger der jeweiligen Anfrage</p>
+                                        <h4 class="font-semibold text-gray-900 mb-2">
+                                            <span class="lang-de">Empfänger:</span>
+                                            <span class="lang-en">Recipients:</span>
+                                        </h4>
+                                        <p class="text-gray-700">
+                                            <span class="lang-de">Die genannten externen Anbieter als Empfänger der jeweiligen Anfrage</span>
+                                            <span class="lang-en">The aforementioned external providers as recipients of the respective requests</span>
+                                        </p>
                                     </div>
                                 </div>
 
                                 <div class="mt-4 bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-                                    <p class="text-amber-800 font-medium mb-1">Hinweis:</p>
-                                    <p class="text-amber-700 text-sm">Auf die Datenverarbeitung durch diese Drittanbieter (z. B. Server-Protokolle/Logs) haben wir keinen vollständigen Einfluss. Es kann nicht ausgeschlossen werden, dass die Anbieter Verbindungsdaten nach eigenen Vorgaben speichern und auswerten.</p>
+                                    <p class="text-amber-800 font-medium mb-1">
+                                        <span class="lang-de">Hinweis:</span>
+                                        <span class="lang-en">Note:</span>
+                                    </p>
+                                    <p class="text-amber-700 text-sm">
+                                        <span class="lang-de">Auf die Datenverarbeitung durch diese Drittanbieter (z. B. Server-Protokolle/Logs) haben wir keinen vollständigen Einfluss. Es kann nicht ausgeschlossen werden, dass die Anbieter Verbindungsdaten nach eigenen Vorgaben speichern und auswerten.</span>
+                                        <span class="lang-en">We do not have complete control over the data processing by these third-party providers (e.g., server logs). It cannot be ruled out that the providers store and analyze connection data according to their own policies.</span>
+                                    </p>
                                 </div>
                             </div>
                         </section>
 
-                        <!-- Section: Push -->
                         <section id="push" class="scroll-mt-24">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="p-2 bg-emerald-100 rounded-lg">
                                     <i data-lucide="bell" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Push-Benachrichtigungen (Firebase Cloud Messaging)</h3>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    <span class="lang-de">Push-Benachrichtigungen (Firebase)</span>
+                                    <span class="lang-en">Push Notifications (Firebase)</span>
+                                </h3>
                             </div>
                             <div class="legal-text text-gray-700 pl-11">
-                                <p class="mb-4">Für Push-Benachrichtigungen verwenden wir Firebase Cloud Messaging (FCM), einen Dienst von Google.</p>
-                                
+                                <p class="mb-4">
+                                    <span class="lang-de">Für Push-Benachrichtigungen verwenden wir Firebase Cloud Messaging (FCM), einen Dienst von Google.</span>
+                                    <span class="lang-en">We use Firebase Cloud Messaging (FCM), a service provided by Google, for push notifications.</span>
+                                </p>
+
                                 <div class="space-y-4">
                                     <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Welche Daten:</h4>
+                                        <h4 class="font-semibold text-gray-900 mb-2">
+                                            <span class="lang-de">Welche Daten:</span>
+                                            <span class="lang-en">Which data:</span>
+                                        </h4>
                                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>Geräte-/Push-Token (zur Zustellung)</li>
-                                            <li>Technische Verbindungsdaten (z. B. IP-Adresse, Zeitpunkt, Zustell-/Verbindungsinformationen)</li>
-                                            <li>Inhalte der Benachrichtigung, soweit diese zur Zustellung an Ihr Gerät übermittelt werden</li>
+                                            <li>
+                                                <span class="lang-de">Geräte-/Push-Token (zur Zustellung)</span>
+                                                <span class="lang-en">Device/Push token (for delivery)</span>
+                                            </li>
+                                            <li>
+                                                <span class="lang-de">Technische Verbindungsdaten (z. B. IP-Adresse, Zeitpunkt, Zustell-/Verbindungsinformationen)</span>
+                                                <span class="lang-en">Technical connection data (e.g., IP address, time, delivery info)</span>
+                                            </li>
+                                            <li>
+                                                <span class="lang-de">Inhalte der Benachrichtigung, soweit diese zur Zustellung an Ihr Gerät übermittelt werden</span>
+                                                <span class="lang-en">Notification content, insofar as transmitted to your device</span>
+                                            </li>
                                         </ul>
                                     </div>
 
                                     <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Zweck:</h4>
-                                        <p class="text-gray-700">Zustellung von Push-Benachrichtigungen (sofern von Ihnen aktiviert)</p>
+                                        <h4 class="font-semibold text-gray-900 mb-2">
+                                            <span class="lang-de">Zweck:</span>
+                                            <span class="lang-en">Purpose:</span>
+                                        </h4>
+                                        <p class="text-gray-700">
+                                            <span class="lang-de">Zustellung von Push-Benachrichtigungen (sofern von Ihnen aktiviert)</span>
+                                            <span class="lang-en">Delivery of push notifications (if enabled by you)</span>
+                                        </p>
                                     </div>
 
                                     <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                                        <h4 class="font-semibold text-emerald-900 mb-2">Rechtsgrundlage:</h4>
-                                        <p class="text-emerald-800 text-sm">Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Sie können Push-Benachrichtigungen jederzeit in den Geräte-/App-Einstellungen deaktivieren.</p>
+                                        <h4 class="font-semibold text-emerald-900 mb-2">
+                                            <span class="lang-de">Rechtsgrundlage:</span>
+                                            <span class="lang-en">Legal basis:</span>
+                                        </h4>
+                                        <p class="text-emerald-800 text-sm">
+                                            <span class="lang-de">Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Sie können Push-Benachrichtigungen jederzeit in den Geräte-/App-Einstellungen deaktivieren.</span>
+                                            <span class="lang-en">Art. 6 (1) (a) GDPR (consent). You can disable push notifications at any time in your device/app settings.</span>
+                                        </p>
                                     </div>
 
                                     <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Empfänger:</h4>
-                                        <p class="text-gray-700">Google (Firebase)</p>
-                                    </div>
-
-                                    <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Speicherdauer/Löschung:</h4>
-                                        <p class="text-gray-700">Token und Zustellinformationen werden typischerweise solange verarbeitet, wie Push-Benachrichtigungen aktiv sind, und können sich technisch ändern (z. B. Token-Rotation). Durch Deaktivierung von Push oder Deinstallation der App endet die Nutzung regelmäßig.</p>
+                                        <h4 class="font-semibold text-gray-900 mb-2">
+                                            <span class="lang-de">Speicherdauer/Löschung:</span>
+                                            <span class="lang-en">Retention/Deletion:</span>
+                                        </h4>
+                                        <p class="text-gray-700">
+                                            <span class="lang-de">Token und Zustellinformationen werden typischerweise solange verarbeitet, wie Push-Benachrichtigungen aktiv sind. Durch Deaktivierung von Push oder Deinstallation der App endet die Nutzung regelmäßig.</span>
+                                            <span class="lang-en">Tokens and delivery info are typically processed as long as push notifications are active. By disabling push or uninstalling the app, this usage generally ends.</span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </section>
 
-                        <!-- Section: Bewertung -->
                         <section id="bewertung" class="scroll-mt-24">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="p-2 bg-emerald-100 rounded-lg">
                                     <i data-lucide="star" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Nutzerbewertung (Firebase)</h3>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    <span class="lang-de">Nutzerbewertung (Firebase)</span>
+                                    <span class="lang-en">User Reviews (Firebase)</span>
+                                </h3>
                             </div>
                             <div class="legal-text text-gray-700 pl-11">
-                                <p class="mb-4">In der App kann eine Bewertung erfasst werden (z. B. Sternebewertung und ggf. ein Text). Diese Bewertung wird über Firebase gespeichert.</p>
-                                
+                                <p class="mb-4">
+                                    <span class="lang-de">In der App kann eine Bewertung erfasst werden (z. B. Sternebewertung und ggf. ein Text). Diese Bewertung wird über Firebase gespeichert.</span>
+                                    <span class="lang-en">A review can be recorded within the app (e.g., star rating and optional text). This review is stored via Firebase.</span>
+                                </p>
+
                                 <div class="space-y-4">
                                     <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Welche Daten:</h4>
+                                        <h4 class="font-semibold text-gray-900 mb-2">
+                                            <span class="lang-de">Welche Daten:</span>
+                                            <span class="lang-en">Which data:</span>
+                                        </h4>
                                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                                            <li>Bewertungsdaten (z. B. Rating, optionaler Text)</li>
-                                            <li>Zeitpunkte/technische Verbindungsdaten, soweit für die Übermittlung erforderlich</li>
+                                            <li>
+                                                <span class="lang-de">Bewertungsdaten (z. B. Rating, optionaler Text)</span>
+                                                <span class="lang-en">Review data (e.g., rating, optional text)</span>
+                                            </li>
+                                            <li>
+                                                <span class="lang-de">Zeitpunkte/technische Verbindungsdaten, soweit für die Übermittlung erforderlich</span>
+                                                <span class="lang-en">Timestamps/technical connection data required for transmission</span>
+                                            </li>
                                         </ul>
                                     </div>
 
-                                    <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Zweck:</h4>
-                                        <p class="text-gray-700">Einholung und Auswertung von Nutzerfeedback zur Verbesserung der App</p>
-                                    </div>
-
                                     <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                                        <h4 class="font-semibold text-emerald-900 mb-2">Rechtsgrundlage:</h4>
-                                        <p class="text-emerald-800 text-sm">Art. 6 Abs. 1 lit. a DSGVO (Einwilligung, wenn Sie aktiv eine Bewertung absenden) und/oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Verbesserung der App)</p>
-                                    </div>
-
-                                    <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Speicherdauer/Löschung:</h4>
-                                        <p class="text-gray-700">Grundsätzlich bis zur Zweckerreichung oder bis Sie die Löschung verlangen, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+                                        <h4 class="font-semibold text-emerald-900 mb-2">
+                                            <span class="lang-de">Rechtsgrundlage:</span>
+                                            <span class="lang-en">Legal basis:</span>
+                                        </h4>
+                                        <p class="text-emerald-800 text-sm">
+                                            <span class="lang-de">Art. 6 Abs. 1 lit. a DSGVO (Einwilligung, wenn Sie aktiv eine Bewertung absenden) und/oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Verbesserung der App)</span>
+                                            <span class="lang-en">Art. 6 (1) (a) GDPR (consent, when actively submitting) and/or Art. 6 (1) (f) GDPR (legitimate interest in improving the app)</span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </section>
 
-                        <!-- Section: Werbung -->
                         <section id="werbung" class="scroll-mt-24">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="p-2 bg-emerald-100 rounded-lg">
                                     <i data-lucide="megaphone" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Werbung (Google AdMob)</h3>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    <span class="lang-de">Werbung (Google AdMob)</span>
+                                    <span class="lang-en">Advertising (Google AdMob)</span>
+                                </h3>
                             </div>
                             <div class="legal-text text-gray-700 pl-11">
-                                <p class="mb-4">Die App nutzt Google AdMob zur Einblendung von Werbung. Dabei können – abhängig von Geräte- und Einwilligungseinstellungen – Daten verarbeitet werden, um Werbung auszuliefern und deren Ausspielung zu messen.</p>
-                                
-                                <div class="bg-gray-50 rounded-lg p-4 mb-4">
-                                    <h4 class="font-semibold text-gray-900 mb-2">Welche Daten (typischerweise, je nach Konfiguration und Einwilligung):</h4>
-                                    <ul class="list-disc list-inside space-y-1 text-gray-700">
-                                        <li>Geräteinformationen (z. B. Modell, Betriebssystem)</li>
-                                        <li>Werbe-Kennungen (z. B. Advertising Identifier/Werbe-ID)</li>
-                                        <li>IP-Adresse und Verbindungsdaten</li>
-                                        <li>Interaktionsdaten (z. B. Anzeige gesehen/geklickt)</li>
-                                        <li>Ggf. ungefähre Standortinformationen (aus technischen Signalen abgeleitet)</li>
-                                    </ul>
-                                </div>
+                                <p class="mb-4">
+                                    <span class="lang-de">Die App nutzt Google AdMob zur Einblendung von Werbung. Dabei können – abhängig von Geräte- und Einwilligungseinstellungen – Daten verarbeitet werden, um Werbung auszuliefern und deren Ausspielung zu messen.</span>
+                                    <span class="lang-en">The app uses Google AdMob to display advertisements. Depending on your device and consent settings, data may be processed to deliver ads and measure their performance.</span>
+                                </p>
 
                                 <div class="bg-gray-50 rounded-lg p-4 mb-4">
-                                    <h4 class="font-semibold text-gray-900 mb-2">Zweck:</h4>
+                                    <h4 class="font-semibold text-gray-900 mb-2">
+                                        <span class="lang-de">Welche Daten (typischerweise):</span>
+                                        <span class="lang-en">Which data (typically):</span>
+                                    </h4>
                                     <ul class="list-disc list-inside space-y-1 text-gray-700">
-                                        <li>Finanzierung der App durch Werbeeinblendungen</li>
-                                        <li>Messung und Optimierung der Auslieferung von Anzeigen</li>
+                                        <li>
+                                            <span class="lang-de">Geräteinformationen (z. B. Modell, Betriebssystem)</span>
+                                            <span class="lang-en">Device information (e.g., model, OS)</span>
+                                        </li>
+                                        <li>
+                                            <span class="lang-de">Werbe-Kennungen (z. B. Advertising Identifier/Werbe-ID)</span>
+                                            <span class="lang-en">Advertising identifiers (e.g., Ad ID)</span>
+                                        </li>
+                                        <li>
+                                            <span class="lang-de">IP-Adresse und Verbindungsdaten</span>
+                                            <span class="lang-en">IP address and connection data</span>
+                                        </li>
+                                        <li>
+                                            <span class="lang-de">Interaktionsdaten (z. B. Anzeige gesehen/geklickt)</span>
+                                            <span class="lang-en">Interaction data (e.g., ad viewed/clicked)</span>
+                                        </li>
                                     </ul>
                                 </div>
 
                                 <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200 mb-4">
-                                    <h4 class="font-semibold text-emerald-900 mb-2">Rechtsgrundlage:</h4>
+                                    <h4 class="font-semibold text-emerald-900 mb-2">
+                                        <span class="lang-de">Rechtsgrundlage:</span>
+                                        <span class="lang-en">Legal basis:</span>
+                                    </h4>
                                     <ul class="list-disc list-inside space-y-1 text-emerald-800 text-sm">
-                                        <li>Soweit erforderlich: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), insbesondere für personalisierte Werbung und zugehörige Messungen</li>
-                                        <li>Soweit ein Zugriff auf Informationen im Endgerät erfolgt (z. B. Werbe-ID, ähnliche Kennungen) und eine Einwilligung erforderlich ist: § 25 TTDSG</li>
+                                        <li>
+                                            <span class="lang-de">Soweit erforderlich: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), insbesondere für personalisierte Werbung</span>
+                                            <span class="lang-en">Where necessary: Art. 6 (1) (a) GDPR (consent), especially for personalized advertising</span>
+                                        </li>
+                                        <li>
+                                            <span class="lang-de">Soweit ein Zugriff auf Informationen im Endgerät erfolgt: § 25 TTDSG (bzw. lokale ePrivacy-Regelungen)</span>
+                                            <span class="lang-en">Where accessing information on the device: ePrivacy Directive / local laws (e.g., § 25 TTDSG)</span>
+                                        </li>
                                     </ul>
                                 </div>
 
                                 <div class="bg-gray-50 rounded-lg p-4">
-                                    <h4 class="font-semibold text-gray-900 mb-2">Empfänger:</h4>
-                                    <p class="text-gray-700">Google (AdMob) und ggf. weitere an der Werbeauslieferung beteiligte Partner innerhalb des Google-Werbesystems, abhängig von Konfiguration und Einwilligung.</p>
+                                    <h4 class="font-semibold text-gray-900 mb-2">
+                                        <span class="lang-de">Empfänger:</span>
+                                        <span class="lang-en">Recipients:</span>
+                                    </h4>
+                                    <p class="text-gray-700">
+                                        <span class="lang-de">Google (AdMob) und ggf. weitere an der Werbeauslieferung beteiligte Partner innerhalb des Google-Werbesystems.</span>
+                                        <span class="lang-en">Google (AdMob) and potentially other partners involved in ad delivery within the Google ad network.</span>
+                                    </p>
                                 </div>
 
                                 <div class="mt-4 bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-                                    <p class="text-amber-800 font-medium mb-1">Hinweis:</p>
-                                    <p class="text-amber-700 text-sm">Wenn Sie keine Einwilligung für personalisierte Werbung erteilen, kann nicht-personalisierte/contextuelle Werbung angezeigt werden.</p>
+                                    <p class="text-amber-800 font-medium mb-1">
+                                        <span class="lang-de">Hinweis:</span>
+                                        <span class="lang-en">Note:</span>
+                                    </p>
+                                    <p class="text-amber-700 text-sm">
+                                        <span class="lang-de">Wenn Sie keine Einwilligung für personalisierte Werbung erteilen, kann nicht-personalisierte Werbung (basierend auf dem Kontext) angezeigt werden.</span>
+                                        <span class="lang-en">If you do not grant consent for personalized ads, non-personalized (contextual) ads may still be shown.</span>
+                                    </p>
                                 </div>
                             </div>
                         </section>
 
-                        <!-- Section: Drittländer -->
                         <section id="drittlaender" class="scroll-mt-24">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="p-2 bg-emerald-100 rounded-lg">
                                     <i data-lucide="globe" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Datenübermittlungen in Drittländer</h3>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    <span class="lang-de">Datenübermittlungen in Drittländer</span>
+                                    <span class="lang-en">Data Transfers to Third Countries</span>
+                                </h3>
                             </div>
                             <div class="legal-text text-gray-700 pl-11">
-                                <p>Bei der Nutzung von Google-Diensten (Firebase, AdMob) kann eine Verarbeitung von Daten in Staaten außerhalb der EU/des EWR (insbesondere USA) nicht ausgeschlossen werden. Solche Übermittlungen können auf geeignete Garantien (z. B. Standardvertragsklauseln) oder – sofern anwendbar – auf Angemessenheitsbeschlüsse gestützt werden.</p>
+                                <p>
+                                    <span class="lang-de">Bei der Nutzung von Google-Diensten (Firebase, AdMob) kann eine Verarbeitung von Daten in Staaten außerhalb der EU/des EWR (insbesondere USA) nicht ausgeschlossen werden. Solche Übermittlungen können auf geeignete Garantien (z. B. Standardvertragsklauseln) oder auf Angemessenheitsbeschlüsse gestützt werden.</span>
+                                    <span class="lang-en">When using Google services (Firebase, AdMob), processing of data in countries outside the EU/EEA (especially the USA) cannot be ruled out. Such transfers are generally based on appropriate safeguards (e.g., Standard Contractual Clauses) or adequacy decisions.</span>
+                                </p>
                             </div>
                         </section>
 
-                        <!-- Section: Kontakt -->
                         <section id="kontakt" class="scroll-mt-24">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="p-2 bg-emerald-100 rounded-lg">
                                     <i data-lucide="mail" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Kontaktaufnahme</h3>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    <span class="lang-de">Kontaktaufnahme</span>
+                                    <span class="lang-en">Contact</span>
+                                </h3>
                             </div>
                             <div class="legal-text text-gray-700 pl-11">
-                                <p class="mb-4">Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir die von Ihnen übermittelten Daten (E-Mail-Adresse, Inhalt der Nachricht, ggf. weitere bereitgestellte Informationen).</p>
-                                
-                                <div class="space-y-4">
-                                    <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Zweck:</h4>
-                                        <p class="text-gray-700">Bearbeitung Ihrer Anfrage und Kommunikation</p>
-                                    </div>
-
-                                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                                        <h4 class="font-semibold text-emerald-900 mb-2">Rechtsgrundlage:</h4>
-                                        <p class="text-emerald-800 text-sm">Art. 6 Abs. 1 lit. b DSGVO (bei Anfragen im Zusammenhang mit der Nutzung der App) und/oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen)</p>
-                                    </div>
-
-                                    <div class="bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-900 mb-2">Speicherdauer:</h4>
-                                        <p class="text-gray-700">Solange erforderlich zur Bearbeitung der Anfrage sowie ggf. im Rahmen gesetzlicher Aufbewahrungspflichten.</p>
-                                    </div>
-                                </div>
+                                <p class="mb-4">
+                                    <span class="lang-de">Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir die von Ihnen übermittelten Daten (E-Mail-Adresse, Inhalt der Nachricht, ggf. weitere bereitgestellte Informationen) zur Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. b bzw. f DSGVO).</span>
+                                    <span class="lang-en">If you contact us via email, we process the data you provide (email address, message content) to handle your inquiry (Art. 6 (1) (b) or (f) GDPR).</span>
+                                </p>
                             </div>
                         </section>
 
-                        <!-- Section: Rechte -->
                         <section id="rechte" class="scroll-mt-24">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="p-2 bg-emerald-100 rounded-lg">
                                     <i data-lucide="shield" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Ihre Rechte</h3>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    <span class="lang-de">Ihre Rechte</span>
+                                    <span class="lang-en">Your Rights</span>
+                                </h3>
                             </div>
                             <div class="legal-text text-gray-700 pl-11">
-                                <p class="mb-4">Sie haben gegenüber uns folgende Rechte bezüglich Ihrer personenbezogenen Daten (je nach Voraussetzungen der DSGVO):</p>
-                                
+                                <p class="mb-4">
+                                    <span class="lang-de">Sie haben gegenüber uns folgende Rechte bezüglich Ihrer personenbezogenen Daten (je nach Voraussetzungen der DSGVO):</span>
+                                    <span class="lang-en">You have the following rights regarding your personal data (subject to GDPR requirements):</span>
+                                </p>
+
                                 <div class="grid sm:grid-cols-2 gap-3">
                                     <div class="bg-gray-50 rounded-lg p-3 flex items-start gap-2">
                                         <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0"></i>
                                         <div>
-                                            <span class="font-semibold text-gray-900">Auskunft</span>
+                                            <span class="font-semibold text-gray-900"><span class="lang-de">Auskunft</span><span class="lang-en">Access</span></span>
                                             <span class="text-sm text-gray-600 block">Art. 15 DSGVO</span>
                                         </div>
                                     </div>
                                     <div class="bg-gray-50 rounded-lg p-3 flex items-start gap-2">
                                         <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0"></i>
                                         <div>
-                                            <span class="font-semibold text-gray-900">Berichtigung</span>
+                                            <span class="font-semibold text-gray-900"><span class="lang-de">Berichtigung</span><span class="lang-en">Rectification</span></span>
                                             <span class="text-sm text-gray-600 block">Art. 16 DSGVO</span>
                                         </div>
                                     </div>
                                     <div class="bg-gray-50 rounded-lg p-3 flex items-start gap-2">
                                         <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0"></i>
                                         <div>
-                                            <span class="font-semibold text-gray-900">Löschung</span>
+                                            <span class="font-semibold text-gray-900"><span class="lang-de">Löschung</span><span class="lang-en">Erasure</span></span>
                                             <span class="text-sm text-gray-600 block">Art. 17 DSGVO</span>
                                         </div>
                                     </div>
                                     <div class="bg-gray-50 rounded-lg p-3 flex items-start gap-2">
                                         <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0"></i>
                                         <div>
-                                            <span class="font-semibold text-gray-900">Einschränkung der Verarbeitung</span>
+                                            <span class="font-semibold text-gray-900"><span class="lang-de">Einschränkung</span><span class="lang-en">Restriction</span></span>
                                             <span class="text-sm text-gray-600 block">Art. 18 DSGVO</span>
                                         </div>
                                     </div>
                                     <div class="bg-gray-50 rounded-lg p-3 flex items-start gap-2">
                                         <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0"></i>
                                         <div>
-                                            <span class="font-semibold text-gray-900">Datenübertragbarkeit</span>
-                                            <span class="text-sm text-gray-600 block">Art. 20 DSGVO (soweit anwendbar)</span>
+                                            <span class="font-semibold text-gray-900"><span class="lang-de">Datenübertragbarkeit</span><span class="lang-en">Data Portability</span></span>
+                                            <span class="text-sm text-gray-600 block">Art. 20 DSGVO</span>
                                         </div>
                                     </div>
                                     <div class="bg-gray-50 rounded-lg p-3 flex items-start gap-2">
                                         <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0"></i>
                                         <div>
-                                            <span class="font-semibold text-gray-900">Widerspruch</span>
-                                            <span class="text-sm text-gray-600 block">Art. 21 DSGVO (Art. 6 Abs. 1 lit. f)</span>
+                                            <span class="font-semibold text-gray-900"><span class="lang-de">Widerspruch</span><span class="lang-en">Objection</span></span>
+                                            <span class="text-sm text-gray-600 block">Art. 21 DSGVO</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="mt-4 bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                                    <p class="text-emerald-800 font-medium mb-1">Widerruf von Einwilligungen:</p>
-                                    <p class="text-emerald-700 text-sm">Jederzeit mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</p>
+                                    <p class="text-emerald-800 font-medium mb-1">
+                                        <span class="lang-de">Widerruf von Einwilligungen:</span>
+                                        <span class="lang-en">Revocation of consent:</span>
+                                    </p>
+                                    <p class="text-emerald-700 text-sm">
+                                        <span class="lang-de">Jederzeit mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</span>
+                                        <span class="lang-en">At any time with effect for the future (Art. 7 (3) GDPR)</span>
+                                    </p>
                                 </div>
 
                                 <div class="mt-4 bg-emerald-600 text-white rounded-lg p-4">
-                                    <p class="font-semibold mb-1">Zur Ausübung Ihrer Rechte:</p>
-                                    <a href="mailto:info@dailysunnah.app" class="text-emerald-100 hover:text-white underline text-lg">info@dailysunnah.app</a>
+                                    <p class="font-semibold mb-1">
+                                        <span class="lang-de">Zur Ausübung Ihrer Rechte kontaktieren Sie uns:</span>
+                                        <span class="lang-en">To exercise your rights, contact us at:</span>
+                                    </p>
+                                    <a href="mailto:info@dailysunnah.app"
+                                        class="text-emerald-100 hover:text-white underline text-lg">info@dailysunnah.app</a>
                                 </div>
                             </div>
                         </section>
 
-                        <!-- Section: Beschwerde -->
                         <section id="beschwerde" class="scroll-mt-24">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="p-2 bg-emerald-100 rounded-lg">
                                     <i data-lucide="alert-circle" class="w-5 h-5 text-emerald-700"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Beschwerderecht bei einer Aufsichtsbehörde</h3>
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    <span class="lang-de">Beschwerderecht / Sicherheit / Änderungen</span>
+                                    <span class="lang-en">Complaints / Security / Changes</span>
+                                </h3>
                             </div>
-                            <div class="legal-text text-gray-700 pl-11">
-                                <p>Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren. In der Regel können Sie sich an die Aufsichtsbehörde Ihres üblichen Aufenthaltsortes oder des Sitzes des Verantwortlichen wenden.</p>
-                            </div>
-                        </section>
-
-                        <!-- Section: Datensicherheit -->
-                        <section id="sicherheit" class="scroll-mt-24">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="p-2 bg-emerald-100 rounded-lg">
-                                    <i data-lucide="lock" class="w-5 h-5 text-emerald-700"></i>
+                            <div class="legal-text text-gray-700 pl-11 space-y-4">
+                                <div>
+                                    <strong class="text-gray-900"><span class="lang-de">Aufsichtsbehörde:</span><span class="lang-en">Supervisory Authority:</span></strong>
+                                    <span class="lang-de">Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren.</span>
+                                    <span class="lang-en">You have the right to lodge a complaint with a data protection supervisory authority.</span>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Datensicherheit</h3>
-                            </div>
-                            <div class="legal-text text-gray-700 pl-11">
-                                <p>Wir setzen angemessene technische und organisatorische Maßnahmen ein, um Daten zu schützen. Die Kommunikation mit externen Diensten erfolgt üblicherweise verschlüsselt (HTTPS), soweit vom jeweiligen Dienst unterstützt.</p>
-                            </div>
-                        </section>
-
-                        <!-- Section: Änderungen -->
-                        <section id="aenderungen" class="scroll-mt-24">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="p-2 bg-emerald-100 rounded-lg">
-                                    <i data-lucide="refresh-cw" class="w-5 h-5 text-emerald-700"></i>
+                                <div id="sicherheit">
+                                    <strong class="text-gray-900"><span class="lang-de">Datensicherheit:</span><span class="lang-en">Data Security:</span></strong>
+                                    <span class="lang-de">Wir setzen angemessene technische Maßnahmen ein (z.B. HTTPS), um Daten zu schützen.</span>
+                                    <span class="lang-en">We use appropriate technical measures (e.g. HTTPS) to protect data.</span>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Änderungen dieser Datenschutzerklärung</h3>
-                            </div>
-                            <div class="legal-text text-gray-700 pl-11">
-                                <p>Wir können diese Datenschutzerklärung anpassen, wenn sich Funktionen, eingesetzte Dienste oder rechtliche Anforderungen ändern. Es gilt die jeweils aktuelle Fassung innerhalb der App bzw. an der Stelle, an der diese Datenschutzerklärung bereitgestellt wird.</p>
+                                <div id="aenderungen">
+                                    <strong class="text-gray-900"><span class="lang-de">Änderungen:</span><span class="lang-en">Changes:</span></strong>
+                                    <span class="lang-de">Wir können diese Datenschutzerklärung anpassen. Es gilt die jeweils aktuelle Fassung in der App.</span>
+                                    <span class="lang-en">We may amend this privacy policy. The current version available in the app applies.</span>
+                                </div>
                             </div>
                         </section>
 
                     </div>
 
-                    <!-- Footer -->
                     <div class="bg-gray-50 border-t border-gray-200 p-6 sm:p-8">
                         <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
                             <div class="text-sm text-gray-500 text-center sm:text-left">
-                                <p>&copy; 2026 DailySunnah. Alle Rechte vorbehalten.</p>
+                                <p>&copy; 2026 DailySunnah.
+                                    <span class="lang-de">Alle Rechte vorbehalten.</span><span class="lang-en">All rights reserved.</span>
+                                </p>
                             </div>
                             <div class="flex items-center gap-2 text-sm text-gray-500">
                                 <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
-                                <span>DSGVO-konforme Datenverarbeitung</span>
+                                <span><span class="lang-de">DSGVO-konforme Datenverarbeitung</span><span class="lang-en">GDPR-compliant Data Processing</span></span>
                             </div>
                         </div>
                     </div>
@@ -687,6 +1007,41 @@
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
+
+        // Language Switcher Logic
+        const btnDe = document.getElementById('btn-de');
+        const btnEn = document.getElementById('btn-en');
+        const body = document.body;
+
+        function setLanguage(lang) {
+            if (lang === 'en') {
+                body.classList.add('en');
+                document.documentElement.lang = 'en';
+                
+                // Toggle Button styling
+                btnEn.classList.remove('text-emerald-100');
+                btnEn.classList.add('bg-white', 'text-emerald-900', 'shadow-sm');
+                
+                btnDe.classList.remove('bg-white', 'text-emerald-900', 'shadow-sm');
+                btnDe.classList.add('text-emerald-100');
+            } else {
+                body.classList.remove('en');
+                document.documentElement.lang = 'de';
+                
+                // Toggle Button styling
+                btnDe.classList.remove('text-emerald-100');
+                btnDe.classList.add('bg-white', 'text-emerald-900', 'shadow-sm');
+                
+                btnEn.classList.remove('bg-white', 'text-emerald-900', 'shadow-sm');
+                btnEn.classList.add('text-emerald-100');
+            }
+            // Update scroll spy logic since element heights may have changed
+            setTimeout(updateActiveNav, 50);
+        }
+
+        btnDe.addEventListener('click', () => setLanguage('de'));
+        btnEn.addEventListener('click', () => setLanguage('en'));
+
 
         // Mobile menu toggle
         const menuBtn = document.getElementById('menuBtn');
@@ -704,8 +1059,8 @@
         function updateActiveNav() {
             const scrollY = window.scrollY;
             
-            sections.forEach((section, index) => {
-                const sectionTop = section.offsetTop - 100;
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 120;
                 const sectionHeight = section.offsetHeight;
                 const sectionId = section.getAttribute('id');
 
@@ -751,4 +1106,5 @@
         updateActiveNav();
     </script>
 </body>
+
 </html>
